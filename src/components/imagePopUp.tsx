@@ -12,12 +12,12 @@ export function ImagePopUp ({poper,LayoutId,miniTabsSrc}:Props){
 
   return (
   <motion.div className="block fixed top-0 left-0 right-0 bottom-0 bg-black/90" 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+        initial={{ opacity: 0 ,scale:0}}
+        animate={{ opacity: 1 ,scale:1}}
+        exit={{ opacity: 0 ,scale:0}}
 >
       <div>
-      <div onClick={()=>poper(100)}>X</div>
+      <div onClick={()=>poper(100)} className="text-gray-400 text-3xl absolute top-3 left-3 cursor-pointer">X</div>
       </div>
       <div className="w-[40vw] m-auto">
         <motion.img layout src={SingleImage} className="w-[60%] m-auto rounded-2xl"/>
@@ -29,3 +29,9 @@ export function ImagePopUp ({poper,LayoutId,miniTabsSrc}:Props){
   )
 
 }
+
+
+
+
+
+
