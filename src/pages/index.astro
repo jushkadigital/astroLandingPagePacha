@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import ImageGrid from '../components/ImageGrid';
+import ImageKit from "imagekit-javascript"
+
+const carrouser1 = [
+  '/default-image.jpg',
+  '/landingsPACHA/tambopata_lupeqf.png',
+  '/default-image.jpg',
+  '/landingsPACHA/tambopata_lupeqf.png',
+  '/default-image.jpg',
+  '/landingsPACHA/tambopata_lupeqf.png',
+  '/default-image.jpg',
+  '/landingsPACHA/tambopata_lupeqf.png',
+]
+// const optimizedImage = await Promise.all(images.map( async(ele) => await getImage({})))
+
+const imagekit = new ImageKit({
+  publicKey:"public_lxr89kzuMU7tdaM/oo63m10H5JU="
+,
+    urlEndpoint:"https://ik.imagekit.io/fr88twf6u"
+,
+})
+
+
+function getImages(arrImgs:string[],sizes:any){
+  return arrImgs.map(ele=> imagekit.url({path:ele,transformation:[sizes]}))
+}
+
+// const imageURL=imagekit.url({path:"/default-image.jpg",transformation:[{"height":"400","width":"500"}]});
+
+// const imageURL2=imagekit.url({path:"/landingsPACHA/tambopata_lupeqf.png",transformation:[{"height":"400","width":"500"}]});
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+    <div class="miniDiv">
+      <ImageGrid client:only srcImages={getImages(carrouser1,{"width":"250","height":"300"})}>
+			</ImageGrid>   
+    </div>
+  </main>
+</Layout>
+
+<style>
+	main {
+		/* margin: auto; */
+		/* padding: 1rem; */
+	}
+  .miniDiv {
+    width: 100vw;
+  }
+	</style>
