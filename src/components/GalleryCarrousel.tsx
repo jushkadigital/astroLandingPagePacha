@@ -40,12 +40,12 @@ export const GalleryCarrousel = ({
     <div className="w-full h-full">
 
     <LayoutGroup>
-      <div className="grid grid-cols-4 w-2/3 m-auto">
-        {srcImages.map((ele, idx) => (<div className=" h-full" onClick={() => poper(idx)} ><motion.img layout src={ele} alt="gaa" className="object-cover"/></div>))}
+      <div className="grid grid-cols-4 gap-y-3 gap-x-2 w-2/3 m-auto">
+        {srcImages.map((ele, idx) => (<div className=" h-full" onClick={() => poper(idx)} ><motion.img layout src={ele} alt="gaa" className="object-cover rounded-2xl"/></div>))}
       </div>
       <div className="popUp">
         <AnimatePresence>
-          {popUp && <ImagePopUp poper={poper} LayoutId={LayoutId} miniTabsSrc={srcImages} />}
+          {popUp && <ImagePopUp poper={poper} LayoutId={LayoutId} miniTabsSrc={srcImages} lengthArr={srcImages.length}/>}
         </AnimatePresence>
       </div>
     </LayoutGroup>
