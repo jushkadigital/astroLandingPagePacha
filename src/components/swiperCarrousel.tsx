@@ -23,10 +23,14 @@ const SPRING_OPTIONS = {
 };
 
 type Props = {
-  imgs:string[]
+  imgs: string[]
+  labelImgs: any[],
+  label: boolean
 }
 
-export const SwipeCarousel = ({imgs}:Props) => {
+export const SwipeCarousel = ({ imgs, labelImgs, label }: Props) => {
+
+  const imgsLen = imgs.length > 0 ? imgs : labelImgs
   const [imgIndex, setImgIndex] = useState(0);
 
   const dragX = useMotionValue(0);
@@ -37,7 +41,7 @@ export const SwipeCarousel = ({imgs}:Props) => {
 
       if (x === 0) {
         setImgIndex((pv) => {
-          if (pv === imgs.length - 1) {
+          if (pv === imgsLen.length - 1) {
             return 0;
           }
           return pv + 1;
@@ -51,7 +55,7 @@ export const SwipeCarousel = ({imgs}:Props) => {
   const onDragEnd = () => {
     const x = dragX.get();
 
-    if (x <= -DRAG_BUFFER && imgIndex < imgs.length - 1) {
+    if (x <= -DRAG_BUFFER && imgIndex < imgsLen.length - 1) {
       setImgIndex((pv) => pv + 1);
     } else if (x >= DRAG_BUFFER && imgIndex > 0) {
       setImgIndex((pv) => pv - 1);
@@ -76,24 +80,24 @@ export const SwipeCarousel = ({imgs}:Props) => {
         onDragEnd={onDragEnd}
         className="flex cursor-grab items-center active:cursor-grabbing"
       >
-        <Images imgIndex={imgIndex} imgs={imgs}/>
+        <Images imgIndex={imgIndex} imgs={imgs} labelsImgs={labelImgs} label={label} />
       </motion.div>
 
-      <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} imgs={imgs}/>
+      <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} imgs={imgs} labelImgs={labelImgs} label={label} />
       <GradientEdges />
     </div>
   );
 };
 
-const Images = ({ imgIndex ,imgs}:{imgIndex:number,imgs:string[]}) => {
+const Images = ({ imgIndex, imgs, labelsImgs, label }: { imgIndex: number, imgs: string[], labelsImgs: any[], label: boolean }) => {
   return (
     <>
-      {imgs.map((imgSrc, idx) => {
+      {label ? labelsImgs.map((ele, idx) => {
         return (
           <motion.div
             key={idx}
             style={{
-              backgroundImage: `url(${imgSrc})`,
+              backgroundImage: `url(${ele.src})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -101,25 +105,52 @@ const Images = ({ imgIndex ,imgs}:{imgIndex:number,imgs:string[]}) => {
               scale: imgIndex === idx ? 0.95 : 0.85,
             }}
             transition={SPRING_OPTIONS}
-            className="aspect-square w-screen shrink-0 rounded-xl bg-neutral-800 object-cover"
-          />
+            className="relative aspect-square w-screen shrink-0 rounded-xl bg-neutral-800 object-cover"
+          >
+            <p className="absolute bottom-5 left-2 text-white text-3xl font-bold">{ele.label}</p>
+          </motion.div>
         );
-      })}
+      }) :
+        imgs.map((imgSrc, idx) => {
+          return (
+            <motion.div
+              key={idx}
+              style={{
+                backgroundImage: `url(${imgSrc})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+              animate={{
+                scale: imgIndex === idx ? 0.95 : 0.85,
+              }}
+              transition={SPRING_OPTIONS}
+              className="aspect-square w-screen shrink-0 rounded-xl bg-neutral-800 object-cover"
+            />
+          );
+        })}
     </>
   );
 };
 
-const Dots = ({ imgIndex, setImgIndex,imgs }:{imgIndex:number,setImgIndex:React.Dispatch<React.SetStateAction<number>>,imgs:string[]}) => {
+const Dots = ({ imgIndex, setImgIndex, imgs, labelImgs, label }: { imgIndex: number, setImgIndex: React.Dispatch<React.SetStateAction<number>>, imgs: string[], labelImgs: any[], label: boolean }) => {
   return (
     <div className="mt-4 flex w-full justify-center gap-2">
-      {imgs.map((_, idx) => {
+      {label ? labelImgs.map((_, idx) => {
         return (
           <button
             key={idx}
             onClick={() => setImgIndex(idx)}
-            className={`h-3 w-3 rounded-full transition-colors ${
-              idx === imgIndex ? "bg-neutral-50" : "bg-neutral-500"
-            }`}
+            className={`h-3 w-3 rounded-full transition-colors ${idx === imgIndex ? "bg-neutral-50" : "bg-neutral-500"
+              }`}
+          />
+        );
+      }) : imgs.map((_, idx) => {
+        return (
+          <button
+            key={idx}
+            onClick={() => setImgIndex(idx)}
+            className={`h-3 w-3 rounded-full transition-colors ${idx === imgIndex ? "bg-neutral-50" : "bg-neutral-500"
+              }`}
           />
         );
       })}

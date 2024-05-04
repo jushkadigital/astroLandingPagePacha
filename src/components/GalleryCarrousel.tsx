@@ -5,9 +5,13 @@ import { ImagePopUp } from './imagePopUp';
 import { SwipeCarousel } from './swiperCarrousel';
 
 export const GalleryCarrousel = ({
-  srcImages
+  srcImages,
+  srcLabelImages,
+  label
 }: {
-  srcImages: string[]
+  srcImages: string[],
+  srcLabelImages: any[],
+  label:boolean
 }) => {
 
   // const [count, setCount] = useState(initialCount);
@@ -40,13 +44,20 @@ export const GalleryCarrousel = ({
     <div className="w-full h-full">
 
     <LayoutGroup>
-      <div className="grid grid-cols-4 gap-y-3 gap-x-2 w-2/3 m-auto">
-        {srcImages.map((ele, idx) => (<div className=" h-full" onClick={() => poper(idx)} ><motion.img layout src={ele} alt="gaa" className="object-cover rounded-2xl"/></div>))}
+        {label ? 
+      <div className="grid grid-cols-4 gap-y-3 gap-x-2 w-2/3">
+        {srcLabelImages.map((ele, idx) => (<div className={`relative h-full`} onClick={() => poper(idx)} ><motion.img  src={ele.src} alt="gaa" className="object-cover rounded-2xl"/><p className="absolute bottom-5 left-2 text-white text-3xl font-bold">{ele.label}</p></div>))}
       </div>
-      <div className="popUp">
+        :
+  <div className="grid grid-cols-4 gap-y-3 gap-x-2 w-2/3">
+        {srcImages.map((ele, idx) => (<div className={`h-full`} onClick={() => poper(idx)} ><motion.img  src={ele} alt="gaa" className="object-cover rounded-2xl"/></div>))}
+      </div>
+
+        }
+            <div className="popUp">
         <AnimatePresence>
           {popUp && <ImagePopUp poper={poper} LayoutId={LayoutId} miniTabsSrc={srcImages} lengthArr={srcImages.length}/>}
-        </AnimatePresence>
+       </AnimatePresence>
       </div>
     </LayoutGroup>
     

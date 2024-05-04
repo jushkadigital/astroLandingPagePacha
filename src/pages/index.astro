@@ -2,9 +2,35 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import ImageGrid from '../components/ImageGrid';
+import Itinerario from '../components/Itinerario';
 import ImageKit from "imagekit-javascript"
 import {Image} from "astro:assets"
 import pachaLogo from "../assets/pachaLogo.png"
+import ICONOSEGURIDAD from "../assets/ICONO-SEGURIDAD.png"
+import ICONOEXCLUSIVIDAD from "../assets/ICONO-EXCLUSIVIDAD.png"
+import ICONOCATEGORIAS from "../assets/ICONO-CATEGORIAS.png"
+import ICONOGUIAS from "../assets/ICONO-GUIAS.png"
+import I1 from "../assets/I1.png"
+import I2 from "../assets/I22.png"
+import I3 from "../assets/I3.png"
+import I4 from "../assets/I4.png"
+import I5 from "../assets/I5.png"
+import I6 from "../assets/I6.png"
+import I7 from "../assets/I7.png"
+import I77 from "../assets/I77.png"
+import ResidenciaImg from "../assets/RESIDENCIA.png"
+import BilingueImg from "../assets/BILINGUE.png"
+import CertificadosImg from "../assets/CERTIFICADOS.png"
+import SoporteImg from "../assets/SOPORTE.png"
+import ExpertosImg from "../assets/EXPERTOS.png"
+import COMPROMISOIMG from "../assets/COMPROMISO.png"
+
+function* zip<T>(...arrays: T[][]): Generator<T[]> {
+    const length = Math.min(...arrays.map(arr => arr.length));
+    for (let i = 0; i < length; i++) {
+        yield arrays.map(arr => arr[i]!!);
+    }
+}
 
 const carrouser1 = [
   '/landingsPACHA/F3.png',
@@ -26,6 +52,12 @@ const imagekit = new ImageKit({
 ,
 })
 
+const mejoresDestinos = []
+
+for  (const [a,b] of zip(  getImages(carrouser1,{"aspectRatio":"3-4","width":"400"}),["Cusco","Cusco","Cusco","Cusco","Cusco","Cusco","Cusco","Cusco",])){
+  mejoresDestinos.push({src:a,label:b})
+}
+
 
 function getImages(arrImgs:string[],sizes:any){
   return arrImgs.map(ele=> imagekit.url({path:ele,transformation:[sizes]}))
@@ -35,6 +67,9 @@ function getImages(arrImgs:string[],sizes:any){
 // const imageURL=imagekit.url({path:"/default-image.jpg",transformation:[{"height":"400","width":"500"}]});
 
 // const imageURL2=imagekit.url({path:"/landingsPACHA/tambopata_lupeqf.png",transformation:[{"height":"400","width":"500"}]});
+
+
+const posts = await Astro.glob('../pages/itinerarios/*.md');
 
 ---
 
@@ -49,7 +84,7 @@ function getImages(arrImgs:string[],sizes:any){
         <!-- sizes="(max-width: 600px) 430px, 1162px" -->
         <!-- src="https://res.cloudinary.com/denkdx0za/image/upload/v1711562707/FONDO_pl6txd.png" alt="gaa"> -->
       <div class=" pacha flex lg:justify-end justify-center lg:px-10"><Image alt="pacha" class="h-auto max-w-[25%]" src={pachaLogo} widths={[200,pachaLogo.width]} sizes={`(max-width: 400px) 50vw, 100vw`}/></div>
-
+      
       <div class="desc text-[14px] lg:text-5xl text-white text-center font-black px-10 lg:px-36 lg:pb-36">¿ESTÁS LISTO
         PARA VIVIR LA AVENTURA MÁS MEMORABLE DE TU VIDA? </div>
     </div>
@@ -83,7 +118,7 @@ function getImages(arrImgs:string[],sizes:any){
 
         </div>
         <div class="w-full flex justify-center lg:w-2/3">
-       <Image  alt="pachaImg8" class="imgOne" inferSize src={getImages(['/landingsPACHA/pacha8IMG.png'],{"width":"300"})[0]!!} widths={[250,300]} sizes={`(max-width: 720px) 85vw 100vw`}/>
+       <Image  alt="pachaImg8" class="imgOne" inferSize src={getImages(['/landingsPACHA/pacha8IMG.png'],{"width":"300"})[0]!!} widths={[250,300]} sizes={`(max-width: 720px) 85vw, 100vw`}/>
           <!-- <img class="imgOne" width="400" height="600" -->
           <!--   src="https://res.cloudinary.com/denkdx0za/image/upload/v1711567929/I2_r4w1ac.png"> -->
         </div>
@@ -105,7 +140,8 @@ function getImages(arrImgs:string[],sizes:any){
 
       <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-y-10 justify-items-center lg:mx-10">
         <div class="flex flex-col w-2/3 justify-center items-center">
-          <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-SEGURIDAD.png">
+        <Image  alt="icc" class="imgIconViaje" inferSize src={ICONOSEGURIDAD} widths={[100,300]} sizes={`(max-width: 720px) 50vw, 100vw`}/>
+          <!-- <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-SEGURIDAD.png"> -->
           <div class="text-center lg:!text-left mt-2 lg:mt-5">
             <p class="font-bold text-[16px] lg:text-2xl text-[#5C5C5C] ">Seguridad y Privacidad</p>
             <p class="text-[#7C7B80] text-[16px] lg:text-xl">Garantía, confidencialidad y tranquilidad
@@ -116,7 +152,8 @@ function getImages(arrImgs:string[],sizes:any){
         </div>
 
         <div class="flex flex-col w-2/3 justify-center items-center">
-          <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-EXCLUSIVIDAD.png">
+        <Image  alt="icc2" class="imgIconViaje" inferSize src={ICONOEXCLUSIVIDAD} widths={[100,300]} sizes={`(max-width: 720px) 50vw, 100vw`}/>
+          <!-- <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-EXCLUSIVIDAD.png"> -->
           <div class="text-center lg:!text-left mt-2 lg:mt-5">
             <p class="font-bold text-[16px] lg:text-2xl text-[#5C5C5C] ">Exclusividad de Servicios</p>
             <p class="text-[#7C7B80] text-[16px] lg:text-xl">Hoteles de 3 estrellas, Trenes
@@ -126,7 +163,8 @@ function getImages(arrImgs:string[],sizes:any){
 
         </div>
         <div class="flex flex-col w-2/3 justify-center items-center">
-          <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-CATEGORIAS.png">
+        <Image  alt="icc3" class="imgIconViaje" inferSize src={ICONOCATEGORIAS} widths={[100,300]} sizes={`(max-width: 720px) 50vw, 100vw`}/>
+          <!-- <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-CATEGORIAS.png"> -->
           <div class="text-center lg:!text-left mt-2 lg:mt-5">
             <p class="font-bold text-[16px] lg:text-2xl text-[#5C5C5C] ">5 Categorías de Turismo</p>
             <p class="text-[#7C7B80] text-[16px] lg:text-xl">Turimos Cultural, Místico, Folklorico,
@@ -136,7 +174,8 @@ function getImages(arrImgs:string[],sizes:any){
 
         </div>
         <div class="flex flex-col w-2/3 justify-center items-center">
-          <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-GUIAS.png">
+        <Image  alt="icc4" class="imgIconViaje" inferSize src={ICONOGUIAS} widths={[100,300]} sizes={`(max-width: 720px) 50vw, 100vw`}/>
+          <!-- <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-GUIAS.png"> -->
           <div class="text-center lg:!text-left mt-2 lg:mt-5">
             <p class="font-bold text-[16px] lg:text-2xl text-[#5C5C5C] "> Seguridad y Privacidad</p>
             <p class="text-[#7C7B80] text-[16px] lg:text-xl">Agentes y guias profesionales con
@@ -154,9 +193,14 @@ function getImages(arrImgs:string[],sizes:any){
           FELICES</h2>
       </div>
       <div>
-        <div id="galleryClientesFelices" class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 px-10 lg:px-0">
+          <div class="miniDiv">
+      <ImageGrid client:only srcImages={getImages(carrouser1,{"aspectRatio":"3-4","width":"400"})} label={false}>
+			</ImageGrid>   
+          </div>
 
-        </div>
+        <!-- <div id="galleryClientesFelices" class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 px-10 lg:px-0"> -->
+
+        <!-- </div> -->
 
       </div>
       <div>
@@ -165,6 +209,11 @@ function getImages(arrImgs:string[],sizes:any){
           DESTINOS QUE PODRAS CONOCER</h2>
       </div>
       <div>
+          <div class="miniDiv">
+      <ImageGrid client:only  srcLabelImages={mejoresDestinos}  label={true}>
+			</ImageGrid>   
+          </div>
+
         <div id="galleryMejoresDestinos" class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 px-10 lg:px-0">
 
         </div>
@@ -204,17 +253,20 @@ function getImages(arrImgs:string[],sizes:any){
           <!-- ></iframe> -->
       </div>
 
-      <div id="itinerario" class="relative">
-        <div id="tripa" class="tripa">
-          <div id="ballNumbers" class="flex flex-col gap-y-[300px]"> </div>
-          <div class="miniTripa"> </div>
-        </div>
-      </div>
-      <div id="mobileItinerario" class="flex flex-col gap-y-10 mb-16"> </div>
+      <div id="itinerario" >
+            <Itinerario client:only srcImagesDesk={posts.map(({frontmatter})=>({src:frontmatter.srcDesk,title:frontmatter.title,desc:frontmatter.desc}))}  srcImagesMobile={posts.map(({frontmatter})=>({src:frontmatter.src,title:frontmatter.title,desc:frontmatter.desc}))}/>
+          
 
 
-      <div class="flex flex-col w-full p-4 lg:p-10 px-6 lg:px-12 font-bold incluye text-white">
-        <div class="flex flex-row">
+     </div>
+      <!-- <div id="mobileItinerario" class="flex flex-col gap-y-10 mb-16"> </div> -->
+
+
+      <div class="flex flex-col w-full mb-3  mt-5  font-bold incluye text-white">
+       <!-- <Image  alt="fondo" class="w-[100%] h-[100%] object-cover" inferSize src={getImages(['/landingsPACHA/FONDO.png'],{"width":"1400"})[0]!!} widths={[350,500,720,1400]}/> -->
+          <Image alt="incluye" class="w-[100%] h-[30vh] lg:h-[85vh] object-cover" inferSize src={getImages(['/landingsPACHA/IMAGE-INCLU.png'],{"width":"1000"})[0]!!} widths={[350,700,1000]}/>
+          <div class="absolute p-4 lg:p-10 px-6 lg:px-12 ">
+            <div class="flex flex-row ">
           <div class="w-1/2">
             <p class=" pb-2 lg:pb-5 text-[12px] lg:text-2xl lg:mb-4 ">INCLUSIONES </p>
             <div class="flex flex-col lg:gap-y-5 text-[10px] lg:text-xl">
@@ -229,6 +281,7 @@ function getImages(arrImgs:string[],sizes:any){
                 <span class="">Vuelos ida y vuelta (Lima – Cusco).</span>
 
               </div>
+                
               <div class="flex flex-row ">
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -317,13 +370,14 @@ function getImages(arrImgs:string[],sizes:any){
             </div>
           </div>
         </div>
-        <div class="flex justify-center mt-10">
+        <div class="flex justify-center mt-2 lg:mt-5">
           <div class="flex flex-col text-center rounded-[35px] bg-[#B65F00] px-16 py-3 text-white">
             <p class="text-[6px] lg:text-xl"> EL VIAJE DE TUS SUEÑOS TE ESPERA</p>
             <a href="https://pdsviajes.com/metodos-de-pago/"
               class=" font-black lg:font-extrabold text-[10px] lg:text-2xl"> ¡RESERVA AHORA!</a>
           </div>
         </div>
+          </div>
       </div>
 
       <div>
@@ -331,38 +385,44 @@ function getImages(arrImgs:string[],sizes:any){
           SOBRE EL HOTEL
         </h2>
       </div>
+      <div class="miniDiv">
+      <ImageGrid client:only srcImages={getImages(carrouser1,{"aspectRatio":"3-4","width":"400"})} label={false}>
+			</ImageGrid>   
+          </div>
 
-      <div>
-        <div id="galleryHoteles" class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 px-10 lg:px-0">
-        </div>
-      </div>
+
+      <!-- <div> -->
+      <!--   <div id="galleryHoteles" class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 px-10 lg:px-0"> -->
+      <!--   </div> -->
+      <!-- </div> -->
 
       <div class="my-5">
         <div
           class="hotelCarac  grid grid-cols-4 gap-0 lg:gap-4 sm:grid-cols-2 md:grid-cols-5 px-4 lg:px-0  text-gray-700">
 
-          <div> <img src="../I1.png" width="125" height="120">
-            <p> Vista a la ciudad </p>
+                  <div> <Image  alt="i1" class="w-[50px] lg:w-[100px]" inferSize src={I1} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} />
+
+            <p class="text-[20px]"> Vista a la ciudad </p>
           </div>
-          <div> <img src="../I22.png" width="125" height="120">
+          <div class="text-[20px]"> <Image  alt="i2" class=" w-[50px] lg:w-[100px]" inferSize src={I2}  widths={[75,150]}  sizes={`(max-width: 720px) 75px, 25vw`}/>
             <p> Baño privado </p>
           </div>
-          <div> <img src="../I3.png" width="125" height="120">
+          <div class="text-[20px]"><Image  alt="i3" class="w-[50px] lg:w-[100px]" inferSize src={I3}   widths={[75,150]}  sizes={`(max-width: 720px) 75px, 25vw`}/>
             <p> Wi-Fi </p>
           </div>
-          <div> <img src="../I4.png" width="125" height="120">
+          <div class="text-[20px]"> <Image  alt="i4" class="w-[50px] lg:w-[100px]" inferSize src={I4} widths={[75,150]}  sizes={`(max-width: 720px) 75px, 25vw`}/>
             <p> Aire acondicionado</p>
           </div>
-          <div> <img src="../I5.png" width="125" height="120">
+          <div class="text-[20px]"> <Image  alt="i5" class="w-[50px] lg:w-[100px]" inferSize src={I5} widths={[75,150]}  sizes={`(max-width: 720px) 75px, 25vw`}/>
             <p> Servicio de Limpieza</p>
           </div>
-          <div> <img src="../I6.png" width="125" height="120">
+          <div class="text-[20px]"> <Image  alt="i6" class="w-[50px] lg:w-[100px]" inferSize src={I6} widths={[75,150]}  sizes={`(max-width: 720px) 75px, 25vw`}/>
             <p> Recepción 24 horas</p>
           </div>
-          <div> <img src="../I7.png" width="125" height="120">
+          <div class="text-[20px]"><Image  alt="i7" class="w-[50px] lg:w-[100px]" inferSize src={I7} widths={[75,150]}  sizes={`(max-width: 720px) 75px, 25vw`}/>
             <p> Caja Fuerte</p>
           </div>
-          <div> <img src="../I77.png" width="125" height="120">
+          <div class="text-[20px]"><Image  alt="i77" class="w-[50px] lg:w-[100px]" inferSize src={I77} widths={[75,150]}  sizes={`(max-width: 720px) 75px, 25vw`}/>
             <p>Habitaciones sin humo</p>
           </div>
 
@@ -422,25 +482,10 @@ function getImages(arrImgs:string[],sizes:any){
       </div>
 
       <div>
-        <div id="galleryTren" class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 px-10 lg:px-0">
 
-
-        </div>
-        <div id="swiper2" class="swiper">
-          <!-- Additional required wrapper -->
-          <div id="Tren" class="swiper-wrapper">
-            <!-- Slides -->
-            <!-- <div class="swiper-slide">Slide 1</div> -->
-            <!-- <div class="swiper-slide">Slide 2</div> -->
-            <!-- <div class="swiper-slide">Slide 3</div> -->
-            ...
+      <div class="minidiv">
+      <ImageGrid client:only srcImages={getImages(carrouser1,{"aspectRatio":"3-4","width":"400"})} label={false}/>
           </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-        </div>
-
 
 
       </div>
@@ -449,46 +494,29 @@ function getImages(arrImgs:string[],sizes:any){
       </div>
 
       <div>
-        <div id="galleryGuia" class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 px-10 lg:px-0">
-
-
-        </div>
-        <div id="swiper3" class="swiper">
-          <!-- Additional required wrapper -->
-          <div id="Guia" class="swiper-wrapper">
-            <!-- Slides -->
-            <!-- <div class="swiper-slide">Slide 1</div> -->
-            <!-- <div class="swiper-slide">Slide 2</div> -->
-            <!-- <div class="swiper-slide">Slide 3</div> -->
-            ...
+      <div class="minidiv">
+      <ImageGrid client:only srcImages={getImages(carrouser1,{"aspectRatio":"3-4","width":"400"})} label={false}/>
           </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-        </div>
-
-
-
       </div>
 
       <div class="my-10">
         <div
-          class="GuiaCarac grid grid-cols-5 gap-0 lg:gap-4 sm:grid-cols-2 md:grid-cols-5 px-4 lg:px-0  text-gray-700">
+          class="GuiaCarac grid grid-cols-5 gap-0 lg:gap-4 sm:grid-cols-2 md:grid-cols-5 px-4 lg:px-0  text-gray-700 ">
 
-          <div> <img src="../RESIDENCIA.png" width="125" height="120">
+              <!-- <Image  alt="i1" class="w-[50px] lg:w-[100px]" inferSize src={I1} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> -->
+          <div><Image  alt="i1" class="w-[50px] lg:w-[100px]" inferSize src={ResidenciaImg} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> 
             <p> Vista a la ciudad </p>
           </div>
-          <div> <img src="../BILINGUE.png" width="125" height="120">
+          <div><Image  alt="i1" class="w-[50px] lg:w-[100px]" inferSize src={BilingueImg} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> 
             <p> Baño privado </p>
           </div>
-          <div> <img src="../CERTIFICADOS.png" width="125" height="120">
+          <div><Image  alt="i1" class="w-[50px] lg:w-[100px]" inferSize src={CertificadosImg} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> 
             <p> Wi-Fi </p>
           </div>
-          <div> <img src="../SOPORTE.png" width="125" height="120">
+          <div> <Image  alt="i1" class="w-[50px] lg:w-[100px]" inferSize src={SoporteImg} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> 
             <p> Aire acondicionado</p>
           </div>
-          <div> <img src="../EXPERTOS.png" width="125" height="120">
+          <div> <Image  alt="i1" class="w-[50px] lg:w-[100px]" inferSize src={ExpertosImg} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> 
             <p> Servicio de Limpieza</p>
           </div>
 
@@ -501,24 +529,10 @@ function getImages(arrImgs:string[],sizes:any){
       </div>
 
       <div>
-        <div id="galleryComida" class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 px-10 lg:px-0">
-        </div>
-        <div id="swiper4" class="swiper">
-          <!-- Additional required wrapper -->
-          <div id="Comida" class="swiper-wrapper">
-            <!-- Slides -->
-            <!-- <div class="swiper-slide">Slide 1</div> -->
-            <!-- <div class="swiper-slide">Slide 2</div> -->
-            <!-- <div class="swiper-slide">Slide 3</div> -->
-            ...
+       <div class="minidiv">
+      <ImageGrid client:only srcImages={getImages(carrouser1,{"aspectRatio":"3-4","width":"400"})} label={false}/>
           </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-        </div>
-
-
+   
 
       </div>
       <div class="flex justify-center mt-10 mb-10">
@@ -551,6 +565,7 @@ function getImages(arrImgs:string[],sizes:any){
         </div>
         <div class="flex flex-col compromisos px-10 gap-y-5 lg:gap-y-10 lg:w-1/2 lg:justify-center">
           <div class="flex flex-row">
+              <!-- <Image  alt="i1" class="w-[50px] lg:w-[100px]" inferSize src={I1} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> -->
             <img src="../COMPROMISO.png" width="150" height="150">
             <div class="flex flex-col ml-5 lg:ml-10">
               <p class="text-[#5C5C5C] font-bold text-[14px] lg:text-xl">Compromiso con calidad</p>
@@ -913,11 +928,7 @@ function getImages(arrImgs:string[],sizes:any){
     
         </div>
     </div>
-    <div class="miniDiv">
-      <ImageGrid client:only srcImages={getImages(carrouser1,{"aspectRatio":"3-4","width":"400"})}>
-			</ImageGrid>   
-    </div>
-
+    
      <div>
        
     </div>
@@ -951,6 +962,27 @@ position: absolute;
   /*     width: 70%; */
   /*   } */
   
+  .imgIconViaje {
+      width: 54px;
+      height: 64px;
+    }
+ .GuiaCarac img{
+  width:40.5px;
+  /* height:40.5px; */
+} 
+  .GuiaCarac div {
+  /* width: 50px; */
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-content: center;
+  align-items:center;
+}
+.GuiaCarac p {
+  font-size:12px;
+  width:50%;
+  text-align:center;
+}
     @media (min-width: 992px) {
     
 .banner .desc{
@@ -968,10 +1000,19 @@ position: absolute;
   margin-bottom: 0;
 
   }
-  /*   .imgOne { */
-  /*   width:70%; */
-  /*   height: 80%; */
-  /* } */
-
-  }
+    .imgIconViaje {
+        width: 60px;
+        height: 72px;
+      }
+    
+.GuiaCarac img{
+  width:70.5px;
+  /* height:70.5px; */
+}
+.GuiaCarac p {
+  font-size:20px;
+  width:50%;
+  text-align:center;
+}
+    }
 	</style>

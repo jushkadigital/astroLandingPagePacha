@@ -7,14 +7,16 @@ import { GalleryCarrousel } from './GalleryCarrousel';
 import  {useCheckMobileScreen} from './useCheckMobileScreen';
 
 export default function ImageGrid({
-  srcImages
+  srcImages=[],
+  srcLabelImages=[],
+  label
 }: {
-  srcImages: string[]
+  srcImages?: string[],
+  srcLabelImages?: any[],
+  label:boolean,
 }) {
-    
+  
   const isMobile = useCheckMobileScreen()
   console.log(isMobile)
-  
-  return isMobile ? <SwipeCarousel imgs={srcImages}/> : <GalleryCarrousel srcImages={srcImages}/>
-
+  return isMobile ? <SwipeCarousel imgs={srcImages} labelImgs={srcLabelImages} label={label}  />  : <GalleryCarrousel srcImages={srcImages} srcLabelImages={srcLabelImages} label={label}/>
 }
