@@ -24,8 +24,7 @@ export const FAQ = ({ga}:Props) => {
   }
   return (
     <div>
-      <h2 className="heading">Frequently Asked Questions</h2>
-      <div className="faq-items">
+      <div className="mx-10 divide-gray-400 divide-y-2">
         {accordionIds.map((item, i) => (
           <Accordion
             key={i}
@@ -47,20 +46,11 @@ const Accordion = ({ i, expanded, setExpanded, title, description }:{i:number,ex
   const isOpen = expanded == true
 
   return (
-    <>
+    <div>
       <motion.div
         initial={false}
-        animate={{
-          backgroundColor: isOpen ? "white" : "gray",
-        }}
         onClick={() => setExpanded(i)}
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "2rem 4rem",
-          cursor: "pointer",
-        }}
+        className="py-4"
       >
         {title}
       </motion.div>
@@ -73,19 +63,20 @@ const Accordion = ({ i, expanded, setExpanded, title, description }:{i:number,ex
             animate="open"
             exit="collapsed"
             variants={{
-              open: { opacity: 1, height: "auto" },
+              open: { opacity: 1,height: "auto" },
               collapsed: { opacity: 0, height: 0 },
             }}
-            transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+            transition={{ duration: 0.4 }}
             style={{
-              backgroundColor: "white",
-              padding: "0 2rem",
+              // backgroundColor: "white",
+              // padding: "0 2rem",
             }}
           >
-            {description}
+            <div dangerouslySetInnerHTML={{__html:description}}></div>
           </motion.section>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 };
+
