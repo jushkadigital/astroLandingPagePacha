@@ -45,7 +45,7 @@ export const GalleryCarrousel = ({
 
     <LayoutGroup>
         {label ? 
-      <div className="grid grid-cols-4 gap-y-3 gap-x-2 w-2/3">
+      <div className="grid grid-cols-3 gap-y-3 gap-x-2 w-2/3">
         {srcLabelImages.map((ele, idx) => (<div className={`relative h-full`} onClick={() => poper(idx)} ><motion.img  src={ele.src} alt="gaa" className="object-cover rounded-2xl"/><p className="absolute bottom-5 left-2 text-white text-3xl font-bold">{ele.label}</p></div>))}
       </div>
         :
@@ -56,7 +56,7 @@ export const GalleryCarrousel = ({
         }
             <div className="popUp">
         <AnimatePresence>
-          {popUp && <ImagePopUp poper={poper} LayoutId={LayoutId} miniTabsSrc={srcImages} lengthArr={srcImages.length}/>}
+          {popUp && <ImagePopUp poper={poper} LayoutId={LayoutId} miniTabsSrc={label ? srcLabelImages :srcImages} lengthArr={label ? srcLabelImages.length :srcImages.length} label={label}/>}
        </AnimatePresence>
       </div>
     </LayoutGroup>

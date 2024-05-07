@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import ImageGrid from '../components/ImageGrid';
+import {FAQ} from '../components/faq';
 import Itinerario from '../components/Itinerario';
 import ImageKit from "imagekit-javascript"
 import {Image} from "astro:assets"
@@ -24,6 +25,10 @@ import CertificadosImg from "../assets/CERTIFICADOS.png"
 import SoporteImg from "../assets/SOPORTE.png"
 import ExpertosImg from "../assets/EXPERTOS.png"
 import COMPROMISOIMG from "../assets/COMPROMISO.png"
+import EQUIPOIMG from "../assets/EQUIPO.png"
+import STARSIMG from "../assets/stars.png"
+import AUTORIZADOSIMG from "../assets/AUTORIZADOS.png"
+
 
 function* zip<T>(...arrays: T[][]): Generator<T[]> {
     const length = Math.min(...arrays.map(arr => arr.length));
@@ -59,6 +64,18 @@ for  (const [a,b] of zip(  getImages(carrouser1,{"aspectRatio":"3-4","width":"40
 }
 
 
+const autorizaciones = []
+const mySlidersAutori = [
+    { imgUrl: "https://res.cloudinary.com/denkdx0za/image/upload/c_pad,w_500,h_500,ar_1:1/v1712239546/certiThree1024x1024_fixvnh.png", label: "certificados por la direccion de comercio exterior y turismo" },
+    { imgUrl: "https://res.cloudinary.com/denkdx0za/image/upload/c_pad,w_500,h_500,ar_1:1/v1712239545/certiTwo1024x1024_vroqgv.png", label: "certificados por el gobierno regional del cusco" },
+    { imgUrl: "https://res.cloudinary.com/denkdx0za/image/upload/c_pad,w_500,h_500,ar_1:1/v1712239545/certiOne1024x1024_lef8ld.png", label: "licencia" },
+  ]
+
+
+mySlidersAutori.forEach(ele=>{
+  autorizaciones.push({src:ele.imgUrl,label:ele.label})
+})
+
 function getImages(arrImgs:string[],sizes:any){
   return arrImgs.map(ele=> imagekit.url({path:ele,transformation:[sizes]}))
 }
@@ -71,6 +88,7 @@ function getImages(arrImgs:string[],sizes:any){
 
 const posts = await Astro.glob('../pages/itinerarios/*.md');
 
+const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
 ---
 
 <Layout title="Welcome to Astro.">
@@ -255,9 +273,6 @@ const posts = await Astro.glob('../pages/itinerarios/*.md');
 
       <div id="itinerario" >
             <Itinerario client:only srcImagesDesk={posts.map(({frontmatter})=>({src:frontmatter.srcDesk,title:frontmatter.title,desc:frontmatter.desc}))}  srcImagesMobile={posts.map(({frontmatter})=>({src:frontmatter.src,title:frontmatter.title,desc:frontmatter.desc}))}/>
-          
-
-
      </div>
       <!-- <div id="mobileItinerario" class="flex flex-col gap-y-10 mb-16"> </div> -->
 
@@ -483,7 +498,7 @@ const posts = await Astro.glob('../pages/itinerarios/*.md');
 
       <div>
 
-      <div class="minidiv">
+      <div class="miniDiv">
       <ImageGrid client:only srcImages={getImages(carrouser1,{"aspectRatio":"3-4","width":"400"})} label={false}/>
           </div>
 
@@ -494,7 +509,7 @@ const posts = await Astro.glob('../pages/itinerarios/*.md');
       </div>
 
       <div>
-      <div class="minidiv">
+      <div class="miniDiv">
       <ImageGrid client:only srcImages={getImages(carrouser1,{"aspectRatio":"3-4","width":"400"})} label={false}/>
           </div>
       </div>
@@ -529,7 +544,7 @@ const posts = await Astro.glob('../pages/itinerarios/*.md');
       </div>
 
       <div>
-       <div class="minidiv">
+       <div class="miniDiv">
       <ImageGrid client:only srcImages={getImages(carrouser1,{"aspectRatio":"3-4","width":"400"})} label={false}/>
           </div>
    
@@ -539,7 +554,7 @@ const posts = await Astro.glob('../pages/itinerarios/*.md');
         <div class="flex flex-col text-center rounded-[35px] bg-[#B65F00] px-16 py-3 text-white">
           <p class="text-[6px] lg:text-xl"> EL VIAJE DE TUS SUEÑOS TE ESPERA</p>
           <a href="https://pdsviajes.com/metodos-de-pago/"
-            class=" font-black lg:font-extrabold text-[10px] lg:text-2xl"> ¡RESERVA AHORA!</a>
+            class="font-black lg:font-extrabold text-[10px] lg:text-2xl"> ¡RESERVA AHORA!</a>
         </div>
       </div>
 
@@ -551,22 +566,26 @@ const posts = await Astro.glob('../pages/itinerarios/*.md');
         <div class=" lg:w-1/2 relative h-[400px] lg:h-[700px] tripleImg lg:m-0">
           <div class="absolute lg:top-[5%] left-[10%]">
 
-            <img class="rounded-[35px]"
-              src="https://res.cloudinary.com/denkdx0za/image/upload/c_fill,w_300,h_400,ar_3:4/v1712236750/PLAZA_qqbfxw.png" />
+            <Image class="rounded-[35px]" alt="triple1" inferSize
+              src="https://res.cloudinary.com/denkdx0za/image/upload/c_fill,w_300,h_400,ar_3:4/v1712236750/PLAZA_qqbfxw.png" widths={[200,300]}/>
           </div>
           <div class="absolute top-[30%] lg:top-[50%] left-[26%] ">
-            <img class="rounded-[35px]"
-              src="https://res.cloudinary.com/denkdx0za/image/upload/c_fill,w_300,h_400,ar_3:4/v1712236750/LO2_qpauwj.png">
+            <Image class="rounded-[35px]" alt="triple1" inferSize
+              src="https://res.cloudinary.com/denkdx0za/image/upload/c_fill,w_300,h_400,ar_3:4/v1712236750/LO2_qpauwj.png" widths={[200,300]}/>
+            <!-- <img class="rounded-[35px]" -->
+            <!--   src="https://res.cloudinary.com/denkdx0za/image/upload/c_fill,w_300,h_400,ar_3:4/v1712236750/LO2_qpauwj.png"> -->
           </div>
           <div class="absolute top-[16%] left-[50%]">
-            <img class="rounded-[35px]"
-              src="https://res.cloudinary.com/denkdx0za/image/upload/c_fill,w_300,h_400,ar_3:4/v1712236750/MACH_p1tjsm.png">
+            <Image class="rounded-[35px]" alt="triple1" inferSize
+              src="https://res.cloudinary.com/denkdx0za/image/upload/c_fill,w_300,h_400,ar_3:4/v1712236750/MACH_p1tjsm.png" widths={[200,300]}/>
+            <!-- <img class="rounded-[35px]" -->
+            <!--   src="https://res.cloudinary.com/denkdx0za/image/upload/c_fill,w_300,h_400,ar_3:4/v1712236750/MACH_p1tjsm.png"> -->
           </div>
         </div>
         <div class="flex flex-col compromisos px-10 gap-y-5 lg:gap-y-10 lg:w-1/2 lg:justify-center">
           <div class="flex flex-row">
-              <!-- <Image  alt="i1" class="w-[50px] lg:w-[100px]" inferSize src={I1} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> -->
-            <img src="../COMPROMISO.png" width="150" height="150">
+              <Image  alt="compro" class="w-[50px] h-[60px] lg:w-[75px]" inferSize src={COMPROMISOIMG} widths={[75,COMPROMISOIMG.width]} sizes={`(max-width: 720px) 75px, 25vw`} />
+            <!-- <img src="../COMPROMISO.png" width="150" height="150"> -->
             <div class="flex flex-col ml-5 lg:ml-10">
               <p class="text-[#5C5C5C] font-bold text-[14px] lg:text-xl">Compromiso con calidad</p>
               <p class="text-[#7C7B80] text-[12px] lg:text-lg"> La calidad es un elemento que nos caracteriza, la cual
@@ -575,7 +594,8 @@ const posts = await Astro.glob('../pages/itinerarios/*.md');
             </div>
           </div>
           <div class="flex flex-row">
-            <img src="../EQUIPO.png" width="150" height="150">
+              <Image  alt="equipo" class="w-[50px] h-[60px] " inferSize src={EQUIPOIMG} widths={[75,EQUIPOIMG.width]} sizes={`(max-width: 720px) 75px, 25vw`} />
+            <!-- <img src="../EQUIPO.png" width="150" height="150"> -->
             <div class="flex flex-col ml-5 lg:ml-10">
               <p class="text-[#5C5C5C] font-bold text-[14px] lg:text-xl">Contamos con un equipo de profesionales</p>
               <p class="text-[#7C7B80] text-[12px] lg:text-lg">Nuestra fuerza de trabajo conformada por preofesionales
@@ -584,7 +604,8 @@ const posts = await Astro.glob('../pages/itinerarios/*.md');
             </div>
           </div>
           <div class="flex flex-row">
-            <img src="../stars.png" width="150" height="150">
+              <Image  alt="stars" class="w-[50px] h-[60px] " inferSize src={STARSIMG} widths={[75,STARSIMG.width]} sizes={`(max-width: 720px) 75px, 25vw`} />
+            <!-- <img src="../stars.png" width="150" height="150"> -->
             <div class="flex flex-col ml-5 lg:ml-10">
               <p class="text-[#5C5C5C] font-bold text-[14px] lg:text-xl">Trabajamos con Responsabilidad social y
                 ambiental</p>
@@ -594,7 +615,8 @@ const posts = await Astro.glob('../pages/itinerarios/*.md');
             </div>
           </div>
           <div class="flex flex-row">
-            <img src="../AUTORIZADOS.png" width="150" height="150">
+              <Image  alt="stars" class="w-[50px] h-[60px]" inferSize src={AUTORIZADOSIMG} widths={[75,AUTORIZADOSIMG.width]} sizes={`(max-width: 720px) 75px, 25vw`} />
+            <!-- <img src="../AUTORIZADOS.png" width="150" height="150"> -->
             <div class="flex flex-col ml-5 lg:ml-10">
               <p class="text-[#5C5C5C] font-bold text-[14px] lg:text-xl">Estamos autorizados y certificados</p>
               <p class="text-[#7C7B80] text-[12px] lg:text-lg">Contamos con todos los permisos y licencias otorgadas por
@@ -668,12 +690,15 @@ const posts = await Astro.glob('../pages/itinerarios/*.md');
       </div>
 
       <div class="flex flex-row justify-between px-16 reconocimiento">
-        <img class="rounded-3xl"
+        <Image class="rounded-3xl"
+            alt="trip"
           src="https://res.cloudinary.com/denkdx0za/image/upload/v1711819560/TRIPADVISOR_o3ho5z_c_fill_w_500_h_667_ar_3_4_evvkar.png"
-          width="160" height="165">
-        <img class="rounded-3xl"
+          inferSize widths={[300,500]}/>
+         <Image class="rounded-3xl"
+            alt="AgenciaRe"
           src="https://res.cloudinary.com/denkdx0za/image/upload/v1711819561/AGENCIA_REGISTRADA_bnfao7_c_pad_w_500_h_667_ar_3_4_sfbeso.png"
-          width="160" height="165">
+          inferSize widths={[300,500]}/>
+   
       </div>
 
       <div class="mt-[40px] mb-[48px] lg:my-16">
@@ -708,6 +733,9 @@ const posts = await Astro.glob('../pages/itinerarios/*.md');
       </div>
 
       <div class="mt-10 lg:mt-16">
+      <div class="miniDiv">
+      <ImageGrid client:only  srcLabelImages={autorizaciones}  label={true}>
+			</ImageGrid> 
         <div id="galleryAutori" class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 px-10 lg:px-0">
 
         </div>
@@ -872,6 +900,8 @@ const posts = await Astro.glob('../pages/itinerarios/*.md');
 
       <div>
         <div class="faq-container"></div>
+          
+        <FAQ client:only ga={faqs.map(ele=>({q:ele.frontmatter.pregunta as string,a:ele.compiledContent()}))}/>
       </div>
 
       <div class="flex flex-col lg:gap-y-2 my-16">
@@ -931,6 +961,107 @@ const posts = await Astro.glob('../pages/itinerarios/*.md');
     
      <div>
        
+  <footer class="w-full foot p-3 px-10 lg:p-5 lg:px-10 text-lg">
+
+    
+    <div class="flex  flex-col lg:flex-row w-full">
+      <div class="flex flex-row w-full lg:w-2/3 ">
+        <div class="flex flex-col w-1/2 divide-y-2 divide-white divide-solid gap-y-5">
+          <div class="footi flex flex-row text-white gap-x-4">
+            <img src="../src/assets/TELE.png" width="40" height="40">
+            <div class="flex flex-col">
+              <p>Teléfono</p>
+              <p>+51 (084) 750153</p>
+              <p>+51 (916) 041494</p>
+            </div>
+          </div>
+          <div class="footi flex flex-row text-white gap-x-4">
+            <img src="../src/assets/CORREO.png" width="40" height="40">
+            <div class="flex flex-col">
+              <p>Correo</p>
+              <p>ventas@pdsviajes.com</p>
+            </div>
+          </div>
+          <div class="footi flex flex-row text-white gap-x-4">
+            <img src="../src/assets/UBICA.png" width="40" height="40">
+            <div class="flex flex-col">
+              <p>Dirección</p>
+              <p>Av. Tacna Nro. 168 – Cusco</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="flex flex-col w-1/2 divide-y-2 divide-white divide-solid gap-y-5">
+          <div class="footi flex flex-row text-white gap-x-4">
+            <img src="../src/assets/CELLL.png" width="40" height="40">
+            <div class="flex flex-col">
+              <p>Oficina</p>
+              <p>+51 84750153</p>
+            </div>
+          </div>
+          <div class="footi flex flex-row text-white gap-x-4">
+            <img src="../src/assets/CELLL.png" width="40" height="40">
+            <div class="flex flex-col">
+              <p>Ventas y Resto de paises</p>
+              <p>+51 916041494</p>
+            </div>
+          </div>
+          <div class="footi flex flex-row text-white gap-x-4">
+            <img src="../src/assets/CELLL.png" width="40" height="40">
+            <div class="flex flex-col ">
+              <p>Operaciones</p>
+              <p>+51 901927627</p>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="w-full lg:w-1/3 flex flex-row lg:flex-col">
+        <div class="flex flex-col divide-y-2 divide-white divide-solid gap-y-5 w-1/2 lg:w-full">
+          <div class=" footi flex flex-row text-white gap-x-4">
+            <img src="../src/assets/Flag-Mexico.webp" width="70" height="70">
+            <div class="flex flex-col ">
+              <p>México</p>
+              <p>+52 5541708834</p>
+            </div>
+          </div>
+          <div class=" footi flex flex-row text-white gap-x-4">
+            <img src="../src/assets/Flag-America.webp" width="70" height="70">
+            <div class="flex flex-col ">
+              <p>USA</p>
+              <p>+1 7867961553</p>
+            </div>
+          </div>
+
+
+
+        </div>
+        <div class="flex flex-col divide-y-2 divide-white divide-solid gap-y-5 w-1/2 lg:w-full">
+          <div class=" footi flex flex-row text-white gap-x-4">
+            <img src="../src/assets/chileflag.png" width="70" height="70">
+            <div class="flex flex-col ">
+              <p>Chile</p>
+              <p>+56 229381333</p>
+            </div>
+          </div>
+          <div class=" footi flex flex-row text-white gap-x-4">
+            <img src="../src/assets/repDomini.png" width="70" height="70">
+            <div class="flex flex-col ">
+              <p>República Dominicana</p>
+              <p>+18 299466563</p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+  
+        </footer>
     </div>
   </main>
 </Layout>
@@ -942,6 +1073,8 @@ const posts = await Astro.glob('../pages/itinerarios/*.md');
 	}
   .miniDiv {
     width: 100vw;
+    /* display: flex; */
+    /* justify-content: center; */
   }
   
 .banner .desc{
@@ -966,6 +1099,23 @@ position: absolute;
       width: 54px;
       height: 64px;
     }
+.hotelCarac img{
+  width:40.5px;
+  height:40.5px;
+}
+.hotelCarac div {
+  /* width: 50px; */
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-content: center;
+  align-items:center;
+}
+.hotelCarac p {
+  font-size:12px;
+  width:50%;
+  text-align:center;
+}
  .GuiaCarac img{
   width:40.5px;
   /* height:40.5px; */
@@ -982,6 +1132,28 @@ position: absolute;
   font-size:12px;
   width:50%;
   text-align:center;
+}
+
+
+.foot {
+    background-image:url('https://res.cloudinary.com/denkdx0za/image/upload/v1712006725/Rectangle_20_b8kqox.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:100%;
+  }
+  .footi {
+    width: 90%;
+    padding-top: 1.5rem;
+  }
+  .footi img{
+    width: 30px;
+    height: 33px;
+  }
+  
+.tripleImg div img{
+  width:150px;
+  height:200px;
 }
     @media (min-width: 992px) {
     
@@ -1005,6 +1177,23 @@ position: absolute;
         height: 72px;
       }
     
+      .hotelCarac img{
+  width:100px;
+  height:100px;
+}
+.hotelCarac div {
+  /* width: 50px; */
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-content: center;
+  align-items:center;
+}
+.hotelCarac p {
+  font-size:18px;
+  width:50%;
+  text-align:center;
+}
 .GuiaCarac img{
   width:70.5px;
   /* height:70.5px; */
@@ -1014,5 +1203,36 @@ position: absolute;
   width:50%;
   text-align:center;
 }
+      .foot {
+    background-image:url('https://res.cloudinary.com/denkdx0za/image/upload/v1712002246/MONT_Mesa_de_trabajo_1_mv1ssn_c_fill_ar_16_9_bpqjek.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:100%;
+  }
+  .footi {
+    width: 90%;
+    padding-top: 1.5rem;
+  }
+  .footi img{
+    width: 30px;
+    height: 33px;
+  }
+    
+.tripleImg div img{
+  width:300px;
+  height:400px;
+}
+    
+.iconsRedes svg{
+    width:60%;
+    height: 60%;
+  }
+    
+.reconocimiento img{
+    width: 400px;
+    height: 500px;
+  }
+    
     }
 	</style>
