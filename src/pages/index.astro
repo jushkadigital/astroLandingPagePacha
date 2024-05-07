@@ -28,6 +28,18 @@ import COMPROMISOIMG from "../assets/COMPROMISO.png"
 import EQUIPOIMG from "../assets/EQUIPO.png"
 import STARSIMG from "../assets/stars.png"
 import AUTORIZADOSIMG from "../assets/AUTORIZADOS.png"
+import UBICAIMG from "../assets/UBICA.png"
+import CORREOIMG from "../assets/CORREO.png"
+import CELLLIMG from "../assets/CELLL.png"
+import TELEIMG from "../assets/TELE.png"
+import MEXICO from "../assets/Flag-Mexico.webp"
+import AMERICA from "../assets/Flag-America.webp"
+import CHILE from "../assets/chileflag.png"
+import REPDOMINI from "../assets/repDomini.png"
+
+
+
+
 
 
 function* zip<T>(...arrays: T[][]): Generator<T[]> {
@@ -967,7 +979,7 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
       <div class="flex flex-row w-full lg:w-2/3 ">
         <div class="flex flex-col w-1/2 divide-y-2 divide-white divide-solid gap-y-5">
           <div class="footi flex flex-row text-white gap-x-4">
-            <img src="./src/assets/TELE.png" width="40" height="40">
+            <img src={TELEIMG.src} width="40" height="40">
             <div class="flex flex-col">
               <p>Teléfono</p>
               <p>+51 (084) 750153</p>
@@ -975,14 +987,14 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
             </div>
           </div>
           <div class="footi flex flex-row text-white gap-x-4">
-            <img src="./src/assets/CORREO.png" width="40" height="40">
+            <img src={CORREOIMG.src} width="40" height="40">
             <div class="flex flex-col">
               <p>Correo</p>
               <p>ventas@pdsviajes.com</p>
             </div>
           </div>
           <div class="footi flex flex-row text-white gap-x-4">
-            <img src="./src/assets/UBICA.png" width="40" height="40">
+            <img src={UBICAIMG.src} width="40" height="40">
             <div class="flex flex-col">
               <p>Dirección</p>
               <p>Av. Tacna Nro. 168 – Cusco</p>
@@ -992,7 +1004,7 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
         </div>
         <div class="flex flex-col w-1/2 divide-y-2 divide-white divide-solid gap-y-5">
           <div class="footi flex flex-row text-white gap-x-4">
-            <img src="./src/assets/CELLL.png" width="40" height="40">
+            <img src={CELLLIMG.src} width="40" height="40">
             <div class="flex flex-col">
               <p>Oficina</p>
               <p>+51 84750153</p>
@@ -1057,9 +1069,6 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
         </div>
       </div>
     </div>
-
-
-  
         </footer>
     </div>
   </main>
@@ -1202,10 +1211,10 @@ position: absolute;
   width:50%;
   text-align:center;
 }
-      .foot {
+  .foot {
     background-image:url('https://res.cloudinary.com/denkdx0za/image/upload/v1712002246/MONT_Mesa_de_trabajo_1_mv1ssn_c_fill_ar_16_9_bpqjek.png');
     background-size: cover;
-    background-position: center;
+      background-position: center;
     background-repeat: no-repeat;
     width:100%;
   }
