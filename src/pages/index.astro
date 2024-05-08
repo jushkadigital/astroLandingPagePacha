@@ -2,11 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import ImageGrid from '../components/ImageGrid';
+import {Formu} from "../components/formCompo"
 import {FAQ} from '../components/faq';
 import Itinerario from '../components/Itinerario';
 import ImageKit from "imagekit-javascript"
 import {Image} from "astro:assets"
 import pachaLogo from "../assets/pachaLogo.png"
+
+
 import ICONOSEGURIDAD from "../assets/ICONO-SEGURIDAD.png"
 import ICONOEXCLUSIVIDAD from "../assets/ICONO-EXCLUSIVIDAD.png"
 import ICONOCATEGORIAS from "../assets/ICONO-CATEGORIAS.png"
@@ -784,7 +787,10 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
         </div>
       </div>
       <div class="flex lg:flex-row flex-col lg:mt-10 gap-y-16 lg:gap-y-0">
+              <Formu client:only/>
         <div class="w-full lg:w-1/2 px-3">
+
+          
           <!-- <script > -->
           <!--     (function (w, d, u) {var s = d.createElement('script'); s.async = true; s.src = u + '?' + (Date.now() / 180000 | 0); var h = d.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h);})(window, document, 'https://cdn.bitrix24.es/b15344011/crm/form/loader_127.js');</script> -->
         </div>
@@ -1011,14 +1017,14 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
             </div>
           </div>
           <div class="footi flex flex-row text-white gap-x-4">
-            <img src="./src/assets/CELLL.png" width="40" height="40">
+            <img src={CELLLIMG.src} width="40" height="40">
             <div class="flex flex-col">
               <p>Ventas y Resto de paises</p>
               <p>+51 916041494</p>
             </div>
           </div>
           <div class="footi flex flex-row text-white gap-x-4">
-            <img src="../src/assets/CELLL.png" width="40" height="40">
+            <img src={CELLLIMG.src} width="40" height="40">
             <div class="flex flex-col ">
               <p>Operaciones</p>
               <p>+51 901927627</p>
@@ -1032,14 +1038,14 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
       <div class="w-full lg:w-1/3 flex flex-row lg:flex-col">
         <div class="flex flex-col divide-y-2 divide-white divide-solid gap-y-5 w-1/2 lg:w-full">
           <div class=" footi flex flex-row text-white gap-x-4">
-            <img src="../src/assets/Flag-Mexico.webp" width="70" height="70">
+            <img src={MEXICO.src} width="70" height="70">
             <div class="flex flex-col ">
               <p>México</p>
               <p>+52 5541708834</p>
             </div>
           </div>
           <div class=" footi flex flex-row text-white gap-x-4">
-            <img src="../src/assets/Flag-America.webp" width="70" height="70">
+            <img src={AMERICA.src} width="70" height="70">
             <div class="flex flex-col ">
               <p>USA</p>
               <p>+1 7867961553</p>
@@ -1051,14 +1057,14 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
         </div>
         <div class="flex flex-col divide-y-2 divide-white divide-solid gap-y-5 w-1/2 lg:w-full">
           <div class=" footi flex flex-row text-white gap-x-4">
-            <img src="../src/assets/chileflag.png" width="70" height="70">
+            <img src={CHILE.src} width="70" height="70">
             <div class="flex flex-col ">
               <p>Chile</p>
               <p>+56 229381333</p>
             </div>
           </div>
           <div class=" footi flex flex-row text-white gap-x-4">
-            <img src="../src/assets/repDomini.png" width="70" height="70">
+            <img src={REPDOMINI.src} width="70" height="70">
             <div class="flex flex-col ">
               <p>República Dominicana</p>
               <p>+18 299466563</p>
