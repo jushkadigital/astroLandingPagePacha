@@ -8,7 +8,7 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   integrations: [tailwind(), react()],
   image: {
-    domains: ["ik.imagekit.io"]
+    domains: ["ik.imagekit.io",'res.cloudinary.com']
   },
   output: "server",
   adapter: netlify()
