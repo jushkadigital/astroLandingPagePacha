@@ -8,7 +8,7 @@ import Itinerario from '../components/Itinerario';
 import ImageKit from "imagekit-javascript"
 import {Image} from "astro:assets"
 import pachaLogo from "../assets/pachaLogo.png"
-
+import { YouTube } from 'astro-embed';
 
 import ICONOSEGURIDAD from "../assets/ICONO-SEGURIDAD.png"
 import ICONOEXCLUSIVIDAD from "../assets/ICONO-EXCLUSIVIDAD.png"
@@ -104,6 +104,9 @@ function getImages(arrImgs:string[],sizes:any){
 const posts = await Astro.glob('../pages/itinerarios/*.md');
 
 const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
+
+const pacha = await Astro.glob('../pages/videos/pacha8.md')
+
 ---
 
 <Layout title="Welcome to Astro.">
@@ -163,7 +166,9 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
           VIAJE DE ENSUEÑO</h2>
       </div>
 
-      <div class="containerVideo flex justify-center mb-10">
+      <div class="w-full">
+        <YouTube id={pacha[0]!.frontmatter.video1} posterQuality="high" class="mx-auto"/>
+          
         <!-- <iframe -->
         <!--   width="640" height="360" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" -->
         <!--   style="height: auto; width: 100%; aspect-ratio: 640 / 360;" allowfullscreen frameborder="0" -->
@@ -275,7 +280,10 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
         <p class="font-extrabold text-[#5C5C5C] text-[16px] text-center">EL CAMINO DE LOS TIEMPOS 8D/7N</p>
       </div>
 
-      <div class="containerVideo flex justify-center mb-10">
+        
+      <div class="w-full">
+          
+        <YouTube id={pacha[0]!.frontmatter.video2} posterQuality="high" class="mx-auto" />
         <!-- <iframe loading="lazy"  src="https://www.youtube.com/embed/KJTQOOSPceo" title="YouTube video player" -->
         <!--   allow="" -->
         <!--   allowfullscreen></iframe> -->
@@ -959,7 +967,9 @@ al aire libre.</span>
 
       </div>
 
-      <div class="containerVideo flex justify-center mb-10">
+          
+      <div class="w-full">
+        <YouTube id={pacha[0]!.frontmatter.video3} posterQuality="high" class="mx-auto" />
         <!-- <iframe  src="https://www.youtube.com/embed/0Zpz2npJ56k" title="YouTube video player" -->
         <!--   loading="lazy" -->
         <!--   allow="" -->
