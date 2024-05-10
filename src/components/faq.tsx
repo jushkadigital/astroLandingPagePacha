@@ -1,4 +1,4 @@
-
+import {PlayIcon } from "@heroicons/react/24/solid"
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -45,6 +45,12 @@ export const FAQ = ({ga}:Props) => {
 const Accordion = ({ i, expanded, setExpanded, title, description }:{i:number,expanded:boolean,setExpanded:(index:number)=>void,title:string,description:string}) => {
   const isOpen = expanded == true
 
+  const MyPlay = motion(PlayIcon)
+
+  const variants = {
+    closed: { rotate: 90},
+    open: { rotate: 0}
+  }
   return (
     <div>
       <motion.div
@@ -52,7 +58,10 @@ const Accordion = ({ i, expanded, setExpanded, title, description }:{i:number,ex
         onClick={() => setExpanded(i)}
         className="py-4"
       >
-        {title}
+        
+        <MyPlay className="inline-block size-3 text-gray-800 mb-1" variants={variants} animate={isOpen ? "open":"closed"}/>
+          { } {title}
+
       </motion.div>
 
       <AnimatePresence initial={false}>

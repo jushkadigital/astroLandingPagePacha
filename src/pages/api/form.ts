@@ -28,7 +28,8 @@ const rawFormData ={
   
   try{
   const params = new URLSearchParams()
-  params.append('FIELDS[STATUS_ID]',rawFormData.statusId)
+  params.append('FIELDS[STATUS_ID]','NEW')
+  params.append('FIELDS[ADDRESS_COUNTRY]',rawFormData.country)
   params.append('FIELDS[TITLE]',rawFormData.title)
   params.append('FIELDS[NAME]',rawFormData.nombres)
   params.append('FIELDS[LAST_NAME]',rawFormData.apellidos)

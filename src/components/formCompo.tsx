@@ -31,7 +31,7 @@ export const Formu =()=>{
         <div className="flex lg:flex-row lg:gap-x-3 flex-col gap-y-3">
         <Input
           size="lg"
-          placeholder="Nombre"
+          placeholder="Titular"
           id="title"
           name="title"
           className=" !border-t-blue-gray-200 focus:!border-t-gray-900 lg:!text-xl  !font-bold"
@@ -41,9 +41,9 @@ export const Formu =()=>{
         />
          <Input
           size="lg"
-          placeholder="Apellido"
-          id="statusId"
-          name="statusId"
+          placeholder="Pais"
+          id="country"
+          name="country"
           className=" !border-t-blue-gray-200 focus:!border-t-gray-900 lg:!text-xl !font-bold"
           labelProps={{
             className: "before:content-none after:content-none",
@@ -109,7 +109,7 @@ export const Formu =()=>{
         {/*   // containerProps={{className:"h-36 p-0 m-0"}} */}
         {/* /> */}
            <Textarea id="consulta" name="consulta" size="lg" placeholder="Consulta"  className="lg:!text-xl !font-bold"/>
-        <Button type="submit" className="mt-6 text-white bg-[#D20000] lg:text-xl text-sm" >
+        <Button type="submit" className="mt-6 text-white bg-[#B65F00] lg:text-xl text-sm" >
           Enviar
         </Button>
       </div>

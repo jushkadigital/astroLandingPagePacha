@@ -410,8 +410,8 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
           </div>
       </div>
 
-      <div>
-        <h2 class=" text-[#B65F00] lg:my-16 text-[20px] lg:text-3xl font-extrabold text-center mt-[40px] mb-5">
+      <div class="mt-36 lg:mt-[40px]">
+        <h2 class=" text-[#B65F00] lg:my-16 text-[20px] lg:text-3xl font-extrabold text-center  mb-5">
           SOBRE EL HOTEL
         </h2>
       </div>
@@ -495,7 +495,8 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
                   d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
                   clip-rule="evenodd" />
               </svg>
-              <span class=" text-[10px] lg:text-xl">Ventanas panoramicas más amplias.</span>
+              <span class=" text-[10px] lg:text-xl"> Vagón observatorio 
+al aire libre.</span>
             </div>
 
             <div class="flex flex-row ">
@@ -505,7 +506,7 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
                   d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
                   clip-rule="evenodd" />
               </svg>
-              <span class=" text-[10px] lg:text-xl">Ventanas panoramicas más amplias.</span>
+              <span class=" text-[10px] lg:text-xl"> Música ambiental.</span>
             </div>
           </div>
         </div>
@@ -534,20 +535,20 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
           class="GuiaCarac grid grid-cols-5 gap-0 lg:gap-4 sm:grid-cols-2 md:grid-cols-5 px-4 lg:px-0  text-gray-700 ">
 
               <!-- <Image  alt="i1" class="w-[50px] lg:w-[100px]" inferSize src={I1} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> -->
-          <div><Image  alt="i1" class="w-[50px] lg:w-[100px]" inferSize src={ResidenciaImg} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> 
-            <p> Vista a la ciudad </p>
+          <div><Image  alt="i1" class="w-[50px] lg:w-[100px] text-[8px]" inferSize src={ResidenciaImg} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> 
+            <p>  Residentes</p>
           </div>
-          <div><Image  alt="i1" class="w-[50px] lg:w-[100px]" inferSize src={BilingueImg} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> 
-            <p> Baño privado </p>
+          <div><Image  alt="i1" class="w-[50px] lg:w-[100px] text-[8px]" inferSize src={BilingueImg} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> 
+            <p> Bilingues </p>
           </div>
-          <div><Image  alt="i1" class="w-[50px] lg:w-[100px]" inferSize src={CertificadosImg} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> 
-            <p> Wi-Fi </p>
+          <div><Image  alt="i1" class="w-[50px] lg:w-[100px] text-[8px]" inferSize src={CertificadosImg} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> 
+            <p> Certificaciones y Autorizaciones </p>
           </div>
-          <div> <Image  alt="i1" class="w-[50px] lg:w-[100px]" inferSize src={SoporteImg} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> 
-            <p> Aire acondicionado</p>
+          <div> <Image  alt="i1" class="w-[50px] lg:w-[100px] text-[8px]" inferSize src={SoporteImg} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> 
+            <p> Soporte 24/7</p>
           </div>
-          <div> <Image  alt="i1" class="w-[50px] lg:w-[100px]" inferSize src={ExpertosImg} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> 
-            <p> Servicio de Limpieza</p>
+          <div> <Image  alt="i1" class="w-[50px] lg:w-[100px] text-[8px]" inferSize src={ExpertosImg} widths={[75,150]} sizes={`(max-width: 720px) 75px, 150px`} /> 
+            <p>Expertos en cada atractivo</p>
           </div>
 
         </div>
@@ -581,17 +582,17 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
         <div class=" lg:w-1/2 relative h-[400px] lg:h-[700px] tripleImg lg:m-0">
           <div class="absolute lg:top-[5%] left-[10%]">
 
-            <Image class="rounded-[35px]" alt="triple1" inferSize
+            <Image class="rounded-2xl  border-2 border-white" alt="triple1" inferSize
               src="https://res.cloudinary.com/denkdx0za/image/upload/c_fill,w_300,h_400,ar_3:4/v1712236750/PLAZA_qqbfxw.png" widths={[200,300]}/>
           </div>
-          <div class="absolute top-[30%] lg:top-[50%] left-[26%] z-10">
-            <Image class="rounded-[35px]" alt="triple2" inferSize
+          <div class="absolute lg:top-[37%] top-[30%] lg:top-[50%] left-[30%]">
+            <Image class="rounded-2xl  border-2 border-white" alt="triple2" inferSize
               src="https://res.cloudinary.com/denkdx0za/image/upload/c_fill,w_300,h_400,ar_3:4/v1712236750/LO2_qpauwj.png" widths={[200,300]}/>
             <!-- <img class="rounded-[35px]" -->
             <!--   src="https://res.cloudinary.com/denkdx0za/image/upload/c_fill,w_300,h_400,ar_3:4/v1712236750/LO2_qpauwj.png"> -->
           </div>
-          <div class="absolute top-[10%] left-[40%]">
-            <Image class="rounded-[35px]" alt="triple3" inferSize
+          <div class="absolute lg:top-[10%] top-[8%] left-[53%]">
+            <Image class="rounded-2xl border-2 border-white" alt="triple3" inferSize
               src="https://res.cloudinary.com/denkdx0za/image/upload/c_fill,w_300,h_400,ar_3:4/v1712236750/MACH_p1tjsm.png" widths={[200,300]}/>
             <!-- <img class="rounded-[35px]" -->
             <!--   src="https://res.cloudinary.com/denkdx0za/image/upload/c_fill,w_300,h_400,ar_3:4/v1712236750/MACH_p1tjsm.png"> -->
@@ -704,7 +705,7 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
         <h2 class=" text-[#B65F00]  text-[20px] lg:text-3xl font-extrabold text-center ">NUESTROS RECONOCIMIENTOS</h2>
       </div>
 
-      <div class="flex flex-col lg:flex-row justify-between px-16 reconocimiento">
+      <div class="flex flex-row justify-between px-16 reconocimiento">
         <Image class="rounded-3xl"
             alt="trip"
           src="https://res.cloudinary.com/denkdx0za/image/upload/v1711819560/TRIPADVISOR_o3ho5z_c_fill_w_500_h_667_ar_3_4_evvkar.png"
@@ -724,7 +725,7 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
         <h2 class=" text-[#B65F00]  text-[20px] lg:text-3xl font-extrabold text-center ">NUESTROS AUTORIZACIONES</h2>
       </div>
 
-      <div class="flex flex-col lg:flex-row  lg:p-10  rounded-3xl px-10 lg:px-0 py-2 shadow-2xl shadow-gray-900">
+      <div class="flex flex-col lg:flex-row  lg:p-10  gap-y-5 lg:gap-y-0 rounded-3xl px-10 lg:px-0 py-2 shadow-2xl shadow-gray-900">
         <div class="flex flex-col lg:divide-y-2 lg:divide-gray-500 gap-y-5 lg:mb-5 lg:w-1/2 lg:px-5">
           <div class="lg:p-4">
             <p class="text-[#B65F00] font-bold text-[15px] lg:text-2xl">RAZÓN SOCIAL</p>
@@ -787,9 +788,8 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
         </div>
       </div>
       <div class="flex lg:flex-row flex-col lg:mt-10 gap-y-16 lg:gap-y-0">
+        <div class="w-full lg:w-1/2 px-3 flex justify-center">
               <Formu client:only/>
-        <div class="w-full lg:w-1/2 px-3">
-
           
           <!-- <script > -->
           <!--     (function (w, d, u) {var s = d.createElement('script'); s.async = true; s.src = u + '?' + (Date.now() / 180000 | 0); var h = d.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h);})(window, document, 'https://cdn.bitrix24.es/b15344011/crm/form/loader_127.js');</script> -->
@@ -803,14 +803,14 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                 <g id="SVGRepo_iconCarrier">
-                  <rect width="512" height="512" rx="15%" fill="#25d366"></rect>
-                  <path fill="#25d366" stroke="#ffffff" stroke-width="26" d="M123 393l14-65a138 138 0 1150 47z"></path>
+                  <rect width="512" height="512" rx="15%" fill="#2bb826"></rect>
+                  <path fill="#2bb826" stroke="#ffffff" stroke-width="26" d="M123 393l14-65a138 138 0 1150 47z"></path>
                   <path fill="#ffffff"
                     d="M308 273c-3-2-6-3-9 1l-12 16c-3 2-5 3-9 1-15-8-36-17-54-47-1-4 1-6 3-8l9-14c2-2 1-4 0-6l-12-29c-3-8-6-7-9-7h-8c-2 0-6 1-10 5-22 22-13 53 3 73 3 4 23 40 66 59 32 14 39 12 48 10 11-1 22-10 27-19 1-3 6-16 2-18">
                   </path>
                 </g>
               </svg>
-              <p class=" text-[#2bb826] text-2xl"> Hablemos WhatsApp</p>
+              <p class=" text-[#2bb826] text-2xl font-bold"> Hablemos por WhatsApp</p>
             </div>
             <p class="text-center text-xl w-2/3 pb-5 lg:pb-0">Envianos un mensaje a nuestro
               WhatsApp oficial de soporte
@@ -1086,7 +1086,7 @@ const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
 		/* padding: 1rem; */
 	}
   .miniDiv {
-    width: 100vw;
+    /* width: 100vw; */
     /* display: flex; */
     /* justify-content: center; */
   }
@@ -1113,6 +1113,10 @@ position: absolute;
       width: 54px;
       height: 64px;
     }
+  .reconocimiento img{
+    width: 150px;
+    /* height: 400px; */
+  }
 .hotelCarac img{
   width:40.5px;
   height:40.5px;
@@ -1143,8 +1147,8 @@ position: absolute;
   align-items:center;
 }
 .GuiaCarac p {
-  font-size:12px;
-  width:50%;
+  font-size:8px;
+  /* width:50%; */
   text-align:center;
 }
 
@@ -1165,10 +1169,14 @@ position: absolute;
     height: 33px;
   }
   
+  .footi div p {
+    font-size:15px;
+  }
 .tripleImg div img{
   width:150px;
-  height:200px;
+  /* height:200px; */
 }
+
     @media (min-width: 992px) {
     
 .banner .desc{
@@ -1214,7 +1222,7 @@ position: absolute;
 }
 .GuiaCarac p {
   font-size:20px;
-  width:50%;
+  /* width:50%; */
   text-align:center;
 }
   .foot {
@@ -1234,8 +1242,8 @@ position: absolute;
   }
     
 .tripleImg div img{
-  width:300px;
-  height:400px;
+  width:250px;
+  /* height:400px; */
 }
     
 .iconsRedes svg{
@@ -1247,6 +1255,10 @@ position: absolute;
     width: 300px;
     height: 400px;
   }
+    .footi div p {
+    font-size:20px;
+  }
+  
     
     }
 	</style>

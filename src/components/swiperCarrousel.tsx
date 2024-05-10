@@ -63,7 +63,7 @@ export const SwipeCarousel = ({ imgs, labelImgs, label }: Props) => {
   };
 
   return (
-    <div className="relative overflow-hidden bg-neutral-950 py-8 w-screen">
+    <div className="relative overflow-hidden bg-gray-100 rounded-2xl py-4 w-screen">
       <motion.div
         drag="x"
         dragConstraints={{
@@ -161,8 +161,8 @@ const Dots = ({ imgIndex, setImgIndex, imgs, labelImgs, label }: { imgIndex: num
 const GradientEdges = () => {
   return (
     <>
-      <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-[10vw] max-w-[100px] bg-gradient-to-r from-neutral-950/50 to-neutral-950/0" />
-      <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-[10vw] max-w-[100px] bg-gradient-to-l from-neutral-950/50 to-neutral-950/0" />
+      {/* <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-[10vw] max-w-[100px] bg-gradient-to-r from-neutral-950/50 to-neutral-950/0" /> */}
+      {/* <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-[10vw] max-w-[100px] bg-gradient-to-l from-neutral-950/50 to-neutral-950/0" /> */}
     </>
   );
 };
