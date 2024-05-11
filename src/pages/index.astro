@@ -9,7 +9,7 @@ import ImageKit from "imagekit-javascript"
 import {Image} from "astro:assets"
 import pachaLogo from "../assets/pachaLogo.png"
 import { YouTube } from 'astro-embed';
-
+import FONDOENTERO from "../assets/FONDO-ENTERO.jpg"
 import ICONOSEGURIDAD from "../assets/ICONO-SEGURIDAD.png"
 import ICONOEXCLUSIVIDAD from "../assets/ICONO-EXCLUSIVIDAD.png"
 import ICONOCATEGORIAS from "../assets/ICONO-CATEGORIAS.png"
@@ -149,7 +149,7 @@ const pacha = await Astro.glob('../pages/videos/pacha8.md')
 <Layout title="Welcome to Astro.">
 	<main class="flex flex-col">
     
-    <div class="w-[100vw] general">
+    <div class="w-[100vw] general" style={`background-image: url(${FONDOENTERO.src}); background-repeat:repeat`}>
       <div class="w-full banner  flex flex-col justify-between pb-10 h-[250px] lg:h-[120vh]">
        <Image  alt="fondo" class="w-[100%] h-[100%] object-cover" inferSize src={getImages(['/landingsPACHA/FONDO.png'],{"width":"1400"})[0]!!} widths={[350,500,720,1400]}/>
       <!-- <img class="w-[100%] h-[100%] object-cover" srcset="https://res.cloudinary.com/denkdx0za/image/upload/v1712323365/FONDO_pl6txd_kmbnno.png 430w, -->
@@ -1198,6 +1198,8 @@ position: absolute;
   /* width:50%; */
   text-align:center;
 }
+
+
 
 
 .foot {
