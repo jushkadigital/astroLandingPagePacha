@@ -97,9 +97,9 @@ const Images = ({ imgIndex, imgs, labelsImgs, label }: { imgIndex: number, imgs:
           <motion.div
             key={idx}
             style={{
-              backgroundImage: `url(${ele.src})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
+              // backgroundImage: `url(${ele.src})`,
+              // backgroundSize: "cover",
+              // backgroundPosition: "center",
             }}
             animate={{
               scale: imgIndex === idx ? 0.95 : 0.85,
@@ -107,6 +107,7 @@ const Images = ({ imgIndex, imgs, labelsImgs, label }: { imgIndex: number, imgs:
             transition={SPRING_OPTIONS}
             className="relative aspect-square w-screen shrink-0 rounded-xl bg-neutral-800 object-cover"
           >
+            <img  src={ele.src} className="w-full h-full object-cover rounded-xl" loading="lazy" decoding="async"/>
             <p className="absolute bottom-5 left-2 text-white text-3xl font-bold">{ele.label}</p>
           </motion.div>
         );
