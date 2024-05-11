@@ -22,7 +22,7 @@ export const MobileIti = ({
         </div>
         <p className="font-bold text-[#54595F] text-[20px] w-fit">{ele.title}</p>
       </div>
-      <img src={ele.src}/>
+      <img src={ele.src} loading="lazy" decoding="async"/>
       <p className="font-semibold text-[#7C7B80] mx-10">{ele.desc}</p>
     </div>))
   )
