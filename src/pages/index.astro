@@ -51,19 +51,56 @@ function* zip<T>(...arrays: T[][]): Generator<T[]> {
         yield arrays.map(arr => arr[i]!!);
     }
 }
+const carrouser0 = [
+  '/landingsPACHA/asd_ibnvrr.jpg',
+  '/landingsPACHA/F2.png',
+  '/landingsPACHA/F3.png',
+  '/landingsPACHA/F5_btfshv.png',
+  '/landingsPACHA/F6_jtoz5l.png'
+  // '/landingsPACHA/F3.png',
+  // '/landingsPACHA/F2.png',
+]
 
 const carrouser1 = [
-  '/landingsPACHA/F3.png',
-  '/landingsPACHA/F2.png',
-  '/landingsPACHA/F3.png',
-  '/landingsPACHA/F2.png',
-  '/landingsPACHA/F3.png',
-  '/landingsPACHA/F2.png',
-  '/landingsPACHA/F3.png',
-  '/landingsPACHA/F2.png',
+  '/landingsPACHA/V.CUSCO_ztzzwh.png',
+  '/landingsPACHA/MA_zdayhh.png',
+  '/landingsPACHA/MONTA_gkylny.png',
+  '/landingsPACHA/LIMA_furzqd.png',
+  '/landingsPACHA/CCACCACCOLLO_qyuywp.png',
+  // '/landingsPACHA/F2.p',
+  // '/landingsPACHA/F3.png',
+  // '/landingsPACHA/F2.png',
+]
+
+const carrouserHotel = [
+  '/landingsPACHA/H4_g7zyxv.png',
+  '/landingsPACHA/H5_g1xiky.png',
+  '/landingsPACHA/H6_tmpgui.png',
+  '/landingsPACHA/H3_awywpb.png',
+  // '/landingsPACHA/H3_awywpb.png',
+  '/landingsPACHA/H2_xfp2hv.png',
+  '/landingsPACHA/H1_st9adb.png',
 ]
 // const optimizedImage = await Promise.all(images.map( async(ele) => await getImage({})))
  
+const carrouserTren = [
+  '/landingsPACHA/Group_1_a1qorm.png',
+  '/landingsPACHA/Group_3_dbvffi.png',
+  '/landingsPACHA/Group_2_nzdrnu.png',
+]
+
+
+const carrouserGuia = [
+  '/landingsPACHA/G1_ug0oar.png',
+  '/landingsPACHA/G3_jyij4r.png',
+  '/landingsPACHA/G2_llopch.png',
+]
+
+const carrouserComida = [
+  '/landingsPACHA/P3_mqgfjq.png',
+  '/landingsPACHA/P2_qnzuiy.png',
+  '/landingsPACHA/P1_xz8wvc.png',
+]
 
 const imagekit = new ImageKit({
   publicKey:"public_lxr89kzuMU7tdaM/oo63m10H5JU="
@@ -74,7 +111,7 @@ const imagekit = new ImageKit({
 
 const mejoresDestinos = []
 
-for  (const [a,b] of zip(  getImages(carrouser1,{"aspectRatio":"3-4","width":"400"}),["Cusco","Cusco","Cusco","Cusco","Cusco","Cusco","Cusco","Cusco",])){
+for  (const [a,b] of zip(  getImages(carrouser1,{"aspectRatio":"3-4","width":"400"}),["Cusco","Machu Picchu","Montaña 7 Colores","Lima","Caccaccollo"])){
   mejoresDestinos.push({src:a,label:b})
 }
 
@@ -166,35 +203,35 @@ const pacha = await Astro.glob('../pages/videos/pacha8.md')
           VIAJE DE ENSUEÑO</h2>
       </div>
 
-      <div class="w-full">
-        <YouTube id={pacha[0]!.frontmatter.video1} posterQuality="high" class="mx-auto"/>
-          
-        <!-- <iframe -->
-        <!--   width="640" height="360" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" -->
-        <!--   style="height: auto; width: 100%; aspect-ratio: 640 / 360;" allowfullscreen frameborder="0" -->
-        <!--   class="lazy-iframe" data-src="https://www.youtube.com/embed/96SNMK1ylFs?si=gpN7QVohw6i3RoZ9" -->
-        <!--   ></iframe> -->
-      </div>
+        <div class="w-full mb-10">
+          <YouTube id={pacha[0]!.frontmatter.video1} posterQuality="high" class="mx-auto"/>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-y-10 justify-items-center lg:mx-10">
-        <div class="flex flex-col w-2/3 justify-center items-center">
-        <Image  alt="icc" class="imgIconViaje" inferSize src={ICONOSEGURIDAD} widths={[100,300]} sizes={`(max-width: 720px) 50vw, 100vw`}/>
-          <!-- <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-SEGURIDAD.png"> -->
-          <div class="text-center lg:!text-left mt-2 lg:mt-5">
-            <p class="font-bold text-[16px] lg:text-2xl text-[#5C5C5C] ">Seguridad y Privacidad</p>
-            <p class="text-[#7C7B80] text-[16px] lg:text-xl">Garantía, confidencialidad y tranquilidad
-              durante todo tu viaje.</p>
-          </div>
-
-
+          <!-- <iframe -->
+          <!--   width="640" height="360" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" -->
+          <!--   style="height: auto; width: 100%; aspect-ratio: 640 / 360;" allowfullscreen frameborder="0" -->
+          <!--   class="lazy-iframe" data-src="https://www.youtube.com/embed/96SNMK1ylFs?si=gpN7QVohw6i3RoZ9" -->
+          <!--   ></iframe> -->
         </div>
 
-        <div class="flex flex-col w-2/3 justify-center items-center">
-        <Image  alt="icc2" class="imgIconViaje" inferSize src={ICONOEXCLUSIVIDAD} widths={[100,300]} sizes={`(max-width: 720px) 50vw, 100vw`}/>
-          <!-- <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-EXCLUSIVIDAD.png"> -->
-          <div class="text-center lg:!text-left mt-2 lg:mt-5">
-            <p class="font-bold text-[16px] lg:text-2xl text-[#5C5C5C] ">Exclusividad de Servicios</p>
-            <p class="text-[#7C7B80] text-[16px] lg:text-xl">Hoteles de 3 estrellas, Trenes
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-y-10 justify-items-center lg:mx-10">
+          <div class="flex flex-col w-2/3 justify-center items-center">
+            <Image  alt="icc" class="imgIconViaje" inferSize src={ICONOSEGURIDAD} widths={[100,300]} sizes={`(max-width: 720px) 50vw, 100vw`}/>
+            <!-- <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-SEGURIDAD.png"> -->
+            <div class="text-center lg:!text-left mt-2 lg:mt-5">
+              <p class="font-bold text-[16px] lg:text-2xl text-[#5C5C5C] ">Seguridad y Privacidad</p>
+              <p class="text-[#7C7B80] text-[16px] lg:text-xl">Garantía, confidencialidad y tranquilidad
+                durante todo tu viaje.</p>
+            </div>
+
+
+          </div>
+
+          <div class="flex flex-col w-2/3 justify-center items-center">
+            <Image  alt="icc2" class="imgIconViaje" inferSize src={ICONOEXCLUSIVIDAD} widths={[100,300]} sizes={`(max-width: 720px) 50vw, 100vw`}/>
+            <!-- <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-EXCLUSIVIDAD.png"> -->
+            <div class="text-center lg:!text-left mt-2 lg:mt-5">
+              <p class="font-bold text-[16px] lg:text-2xl text-[#5C5C5C] ">Exclusividad de Servicios</p>
+              <p class="text-[#7C7B80] text-[16px] lg:text-xl">Hoteles de 3 estrellas, Trenes
               turísticos y movilidad confortables.</p>
           </div>
 
@@ -232,7 +269,7 @@ const pacha = await Astro.glob('../pages/videos/pacha8.md')
       </div>
       <div>
           <div class="miniDiv">
-      <ImageGrid client:only srcImages={getImages(carrouser1,{"aspectRatio":"3-4","width":"400"})} label={false}>
+      <ImageGrid client:only srcImages={getImages(carrouser0,{"aspectRatio":"3-4","width":"400"})} label={false}>
 			</ImageGrid>   
           </div>
 
@@ -281,7 +318,7 @@ const pacha = await Astro.glob('../pages/videos/pacha8.md')
       </div>
 
         
-      <div class="w-full">
+      <div class="w-full mb-10">
           
         <YouTube id={pacha[0]!.frontmatter.video2} posterQuality="high" class="mx-auto" />
         <!-- <iframe loading="lazy"  src="https://www.youtube.com/embed/KJTQOOSPceo" title="YouTube video player" -->
@@ -418,13 +455,13 @@ const pacha = await Astro.glob('../pages/videos/pacha8.md')
           </div>
       </div>
 
-      <div class="mt-36 lg:mt-[40px]">
+      <div class="lg:mt-36 mt-10">
         <h2 class=" text-[#B65F00] lg:my-16 text-[20px] lg:text-3xl font-extrabold text-center  mb-5">
           SOBRE EL HOTEL
         </h2>
       </div>
       <div class="miniDiv">
-      <ImageGrid client:only srcImages={getImages(carrouser1,{"aspectRatio":"3-4","width":"400"})} label={false}>
+      <ImageGrid client:only srcImages={getImages(carrouserHotel,{"aspectRatio":"3-4","width":"400"})} label={false}>
 			</ImageGrid>   
           </div>
 
@@ -523,7 +560,7 @@ al aire libre.</span>
       <div>
 
       <div class="miniDiv">
-      <ImageGrid client:only srcImages={getImages(carrouser1,{"aspectRatio":"3-4","width":"400"})} label={false}/>
+      <ImageGrid client:only srcImages={getImages(carrouserTren,{"aspectRatio":"3-4","width":"400"})} label={false}/>
           </div>
 
 
@@ -534,7 +571,7 @@ al aire libre.</span>
 
       <div>
       <div class="miniDiv">
-      <ImageGrid client:only srcImages={getImages(carrouser1,{"aspectRatio":"3-4","width":"400"})} label={false}/>
+      <ImageGrid client:only srcImages={getImages(carrouserGuia,{"aspectRatio":"3-4","width":"400"})} label={false}/>
           </div>
       </div>
 
@@ -569,7 +606,7 @@ al aire libre.</span>
 
       <div>
        <div class="miniDiv">
-      <ImageGrid client:only srcImages={getImages(carrouser1,{"aspectRatio":"3-4","width":"400"})} label={false}/>
+      <ImageGrid client:only srcImages={getImages(carrouserComida,{"aspectRatio":"3-4","width":"400"})} label={false}/>
           </div>
    
 
@@ -968,7 +1005,7 @@ al aire libre.</span>
       </div>
 
           
-      <div class="w-full">
+      <div class="w-full mb-10">
         <YouTube id={pacha[0]!.frontmatter.video3} posterQuality="high" class="mx-auto" />
         <!-- <iframe  src="https://www.youtube.com/embed/0Zpz2npJ56k" title="YouTube video player" -->
         <!--   loading="lazy" -->

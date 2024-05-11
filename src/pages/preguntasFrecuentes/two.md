@@ -1,12 +1,12 @@
 ---
-pregunta: 'The greatest post of all time'
+pregunta: 'A que altura se encuentra la montaña de 7 colores y laguna de humantay y cuál es la temperatura'
 ---
 
-**CUSCO** . La temporada seca es la mejor, va de mayo a octubre, es considerada la mejor para visitar Cusco y Machu Picchu. Puesto que hay menos probabilidades de lluvias, y los días suelen ser más soleados y agradables. Si quieres disfrutar de las fiestas tradicionales como la Fiesta del Sol o el Inti Raymi, te recomiendo ir entre junio y agosto.
-
-**LIMA** Lima tiene un clima subtropical y una temporada de verano que va de diciembre a abril. Durante estos meses, el clima es más cálido y seco, ideal para explorar la ciudad y sus alrededores. Sin embargo, ten en cuenta que Lima puede ser visitada durante todo el año.
-
-ICA.La región de Ica tiene un clima desértico con temperaturas elevadas. La mejor época para visitar Ica y sus atracciones como la Reserva Nacional de Paracas y el oasis de Huacachina es durante la temporada seca, de mayo a octubre.
-
-PUERO MALDONADO :La temporada seca, de abril a noviembre, es generalmente más recomendada para excursiones en la selva, ya que los niveles de agua son más bajos y las condiciones son más propicias para explorar la flora y fauna.
-
+**Laguna Humantay**: La Laguna Humantay está ubicada a una altitud aproximada de 4,200 metros sobre el nivel del mar (13,780 pies).
+*Temperatura*: La temperatura en la Laguna Humantay puede variar, pero generalmente, debido a su elevada altitud, las temperaturas pueden ser heladas. 
+Durante el día, las temperaturas pueden oscilar entre 10°C y 15°C (50°F a 59°F), mientras que por la noche pueden descender significativamente. 
+**Montaña Vinicunca (Montaña de Siete Colores)**: La Montaña Vinicunca, también conocida como la Montaña de Siete Colores o Rainbow Mountain, se encuentra
+a una altitud elevada, alrededor de 5,200 metros sobre el nivel del mar (17,060 pies). 
+*Temperatura*: La temperatura en la Montaña de Siete Colores puede ser bastante fría debido a su altitud. Durante el día, las temperaturas 
+pueden rondar los 5°C a 10°C (41°F a 50°F) y pueden descender por debajo de cero durante
+la noche. Es importante llevar ropa abrigada debido a las bajas temperaturas y la exposición al viento

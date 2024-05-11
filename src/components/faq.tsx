@@ -42,14 +42,14 @@ export const FAQ = ({ga}:Props) => {
 
 
 
-const Accordion = ({ i, expanded, setExpanded, title, description }:{i:number,expanded:boolean,setExpanded:(index:number)=>void,title:string,description:string}) => {
-  const isOpen = expanded == true
+const Accordion = React.memo(({ i, expanded, setExpanded, title, description }:{i:number,expanded:boolean,setExpanded:(index:number)=>void,title:string,description:string}) => {
+  const isOpen = expanded 
 
   const MyPlay = motion(PlayIcon)
 
   const variants = {
-    closed: { rotate: 90},
-    open: { rotate: 0}
+    open: { rotate: 0},
+    closed: { rotate: 90}
   }
   return (
     <div>
@@ -59,7 +59,7 @@ const Accordion = ({ i, expanded, setExpanded, title, description }:{i:number,ex
         className="py-4"
       >
         
-        <MyPlay className="inline-block size-3 text-gray-800 mb-1" variants={variants} animate={isOpen ? "open":"closed"}/>
+        <MyPlay className="inline-block size-3 text-gray-800 mb-1" variants={variants} animate={ isOpen ? "open":"closed"}/>
           { } {title}
 
       </motion.div>
@@ -87,5 +87,5 @@ const Accordion = ({ i, expanded, setExpanded, title, description }:{i:number,ex
       </AnimatePresence>
     </div>
   );
-};
+});
 

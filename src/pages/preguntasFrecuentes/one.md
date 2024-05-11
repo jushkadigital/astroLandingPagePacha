@@ -1,5 +1,5 @@
 ---
-pregunta: 'The greatest post of all time'
+pregunta: '¿Cuál es la mejor temporada para hacer una excursión en Cusco, Lima , Ica , Puerto Maldonado?'
 ---
 
 **CUSCO** . La temporada seca es la mejor, va de mayo a octubre, es considerada la mejor para visitar Cusco y Machu Picchu. Puesto que hay menos probabilidades de lluvias, y los días suelen ser más soleados y agradables. Si quieres disfrutar de las fiestas tradicionales como la Fiesta del Sol o el Inti Raymi, te recomiendo ir entre junio y agosto.
