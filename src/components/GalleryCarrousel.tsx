@@ -46,7 +46,7 @@ export const GalleryCarrousel = ({
     <LayoutGroup>
         {label ? 
       <div className="grid grid-cols-3 gap-y-3 gap-x-2 w-full">
-        {srcLabelImages.map((ele, idx) => (<div className={`relative h-full`} onClick={() => poper(idx)} ><motion.img  src={ele.src} alt="gaa" className="object-cover rounded-2xl"/><p className="absolute bottom-5 left-2 text-white text-3xl font-bold">{ele.label}</p></div>))}
+        {srcLabelImages.map((ele, idx) => (<div className={`relative h-full`} onClick={() => poper(idx)} ><motion.img  loading="lazy" decoding="async" src={ele.src} alt="gaa" className="object-cover rounded-2xl"/><p className="absolute bottom-5 left-2 text-white text-3xl font-bold">{ele.label}</p></div>))}
       </div>
         :
   <div className="grid grid-cols-3 gap-y-3 gap-x-2 w-full">
