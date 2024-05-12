@@ -11,7 +11,7 @@ export const GalleryCarrousel = ({
 }: {
   srcImages: string[],
   srcLabelImages: any[],
-  label:boolean
+  label: boolean
 }) => {
 
   // const [count, setCount] = useState(initialCount);
@@ -43,24 +43,40 @@ export const GalleryCarrousel = ({
   return (
     <div className=" h-full">
 
-    <LayoutGroup>
-        {label ? 
-      <div className="grid grid-cols-3 gap-y-3 gap-x-2 w-full">
-        {srcLabelImages.map((ele, idx) => (<div className={`relative h-full`} onClick={() => poper(idx)} ><motion.img  loading="lazy" decoding="async" src={ele.src} alt="gaa" className="object-cover rounded-2xl"/><p className="absolute bottom-5 left-2 text-white text-3xl font-bold">{ele.label}</p></div>))}
-      </div>
-        :
-  <div className="grid grid-cols-3 gap-y-3 gap-x-2 w-full">
-        {srcImages.map((ele, idx) => (<div className={`h-full`} onClick={() => poper(idx)} ><motion.img  src={ele} alt="gaa" className="object-cover rounded-2xl"/></div>))}
-      </div>
+      <LayoutGroup>
+        {label ?
+          <div className="grid grid-cols-3 gap-y-3 gap-x-2 w-full">
+            {srcLabelImages.map((ele, idx) => (<motion.div  className={`relative  rounded-2xl z-50 relative h-96 shrink-0 overflow-hidden `} onClick={() => poper(idx)} ><motion.img  whileHover="hover" transition={{
+                duration: 1,
+                ease: "easeOut",
+              }}
+              variants={{
+                hover: {
+                  scale: 1.10,
+                },
+              }} loading="lazy" decoding="async" src={ele.src} alt="gaa" className="object-cover rounded-2xl" /><p className="absolute bottom-5 left-2 text-white text-3xl font-bold">{ele.label}</p></motion.div>))}
+          </div>
+          :
+          <div className="grid grid-cols-3 gap-y-3 gap-x-2 w-full">
+            {srcImages.map((ele, idx) => (<motion.div  className={`relative  rounded-2xl z-50 relative h-96 shrink-0 overflow-hidden`} onClick={() => poper(idx)} ><motion.img  whileHover="hover" transition={{
+                duration: 1,
+                ease: "easeOut",
+              }}
+              variants={{
+                hover: {
+                  scale: 1.10,
+                },
+              }}  src={ele} alt="gaa" className="object-cover rounded-2xl" /></motion.div>))}
+          </div>
 
         }
-            <div className="popUp">
-        <AnimatePresence>
-          {popUp && <ImagePopUp poper={poper} LayoutId={LayoutId} miniTabsSrc={label ? srcLabelImages :srcImages} lengthArr={label ? srcLabelImages.length :srcImages.length} label={label}/>}
-       </AnimatePresence>
-      </div>
-    </LayoutGroup>
-    
+        <div className="popUp">
+          <AnimatePresence>
+            {popUp && <ImagePopUp poper={poper} LayoutId={LayoutId} miniTabsSrc={label ? srcLabelImages : srcImages} lengthArr={label ? srcLabelImages.length : srcImages.length} label={label} />}
+          </AnimatePresence>
+        </div>
+      </LayoutGroup>
+
     </div>
   );
 }

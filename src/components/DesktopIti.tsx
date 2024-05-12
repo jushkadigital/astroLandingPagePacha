@@ -5,7 +5,7 @@ import { ImagePopUp } from './imagePopUp';
 import { SwipeCarousel } from './swiperCarrousel';
 import { GalleryCarrousel } from './GalleryCarrousel';
 import { useCheckMobileScreen } from './useCheckMobileScreen';
-
+// import { motion  } from "framer-motion";
 export const DesktopIti = ({
   srcImagesDesk,
 }: {
@@ -13,7 +13,15 @@ export const DesktopIti = ({
 }) => {
   return (
     srcImagesDesk.map((ele, index) => (
-      <div className="flex flex-row w-full mb-8 ml-3">
+      <motion.div whileHover="hover" transition={{
+                duration: 1,
+                ease: "backInOut",
+              }}
+              variants={{
+                hover: {
+                  scale: 1.08,
+                },
+              }}  className="flex flex-row w-full mb-8 ml-3">
 
         {index % 2 == 0 ? <>
           <div className="w-1/2 flex justify-center">
@@ -35,7 +43,7 @@ export const DesktopIti = ({
             </div>
           </>
         }
-      </div>))
+      </motion.div>))
   )
 }
 
