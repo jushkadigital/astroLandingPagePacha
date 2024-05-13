@@ -204,9 +204,9 @@ const resultado = await getIpInfo()
             <div class="flex justify-center">
               <p class="font-bold text-[16px] lg:text-3xl text-[#B65F00] w-56 lg:w-full text-center lg:!text-left">
                   {princiDesc[0]!.frontmatter.desc}
-      {ip}
-      {resultado.countryName}
-      {resultado.countryCode}
+      <!-- {ip} -->
+      <!-- {resultado.countryName} -->
+      <!-- {resultado.countryCode} -->
               </p>
             </div>
             <div class="flex justify-center">
@@ -864,7 +864,7 @@ al aire libre.</span>
       </div>
       <div class="flex lg:flex-row flex-col lg:mt-10 gap-y-16 lg:gap-y-0">
         <div class="w-full lg:w-1/2 px-3 flex justify-center">
-              <Formu client:only/>
+              <Formu client:only objRes={{phoneCode:resultado.phoneCode,country:resultado.countryName}}/>
           
           <!-- <script > -->
           <!--     (function (w, d, u) {var s = d.createElement('script'); s.async = true; s.src = u + '?' + (Date.now() / 180000 | 0); var h = d.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h);})(window, document, 'https://cdn.bitrix24.es/b15344011/crm/form/loader_127.js');</script> -->

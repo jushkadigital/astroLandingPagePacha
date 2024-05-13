@@ -1,8 +1,9 @@
 import type { APIRoute } from "astro";
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ params,request }) => {
   const formData = await request.formData();
 
+  // console.log(params)
 
 const rawFormData ={
       mesViaje:formData.get("mesViaje")!.toString(),
@@ -11,9 +12,11 @@ const rawFormData ={
       apellidos:formData.get("apellidos")!.toString(),
       telefono:formData.get("telefono")!.toString(),
       correo:formData.get("correo")!.toString(),
+      phoneCode:formData.get("phoneCode")!.toString(),
+ 
     }
       
-  console.log(rawFormData)
+  // console.log(rawFormData)
  
   // Validate the data - you'll probably want to do more than this
   if (!rawFormData.nombres || !rawFormData.correo ) {
@@ -26,6 +29,31 @@ const rawFormData ={
   }
   // Do something with the data, then return a success response
   
+  const hashPaises = [
+    'argentina',
+    'bolivia',
+    'brasil',
+    'chile',
+    'canada',
+    'colombia',
+    'costa rica',
+    'ecuador',
+    'el salvador',
+    'united states',
+    'spain',
+    'guatemala',
+    'honduras',
+    'mexico',
+    'nicaragua',
+    'panama',
+    'paraguay',
+    'peru',
+    'puerto rico',
+    'uruguay',
+    'venezuela',
+    'cuba',
+    'francia',
+  ]
   try{
 
   const currentDateTime = new Date()
@@ -34,15 +62,15 @@ const rawFormData ={
   params.append('FIELDS[TITLE]',"Formulario Landing Page Pachas")
   // params.append('FIELDS[UF_CRM_LEAD_1712673755506]',rawFormData.mesViaje)
   params.append('FIELDS[DATE_CREATE]',formatedDateTime)
-  params.append('FIELDS[ADDRESS_COUNTRY]',rawFormData.country)
+  params.append('FIELDS[UF_CRM_1623869376]',hashPaises.indexOf(rawFormData.country.toLowerCase()).toString() || `24`)
   params.append('FIELDS[NAME]',rawFormData.nombres)
   params.append('FIELDS[LAST_NAME]',rawFormData.apellidos)
   params.append('FIELDS[EMAIL][0][VALUE]',rawFormData.correo)
   params.append('FIELDS[EMAIL][0][VALUE_TYPE]','Work')
-  params.append('FIELDS[PHONE][0][VALUE]',rawFormData.telefono)
+  params.append('FIELDS[PHONE][0][VALUE]',`+`+rawFormData.phoneCode +' '+rawFormData.telefono)
   params.append('FIELDS[PHONE][0][VALUE_TYPE]','Work')
   
-  const res = await fetch('https://jushka.bitrix24.es/rest/307/4ndowpagdqsiu0z7/crm.lead.add.json', {
+  const res = await fetch('https://pdscorporation.bitrix24.es/rest/108335/vfbji7p1qmfx0m7d/crm.lead.add.json', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'

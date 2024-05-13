@@ -9,12 +9,18 @@ import {
 
 
 
-export const Formu =()=>{
+type Props = {
+  objRes: any 
+}
+
+export const Formu =({objRes}:Props)=>{
   const [responseMessage, setResponseMessage] = useState("");
 
   async function submit(e: any) {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
+    formData.append("phoneCode",objRes.phoneCode)
+    formData.append("country",objRes.country)
     const response = await fetch("/api/form", {
       method: "POST",
       body: formData,
@@ -28,30 +34,6 @@ export const Formu =()=>{
   return (
   <form onSubmit={submit} className="mt-8 mb-2 w-10/12">
       <div className="mb-1 flex flex-col lg:gap-6 gap-3">
-        <div className="flex lg:flex-row lg:gap-x-3 flex-col gap-y-3">
-        {/* <Input */}
-        {/*   size="lg" */}
-        {/*   placeholder="Titular" */}
-        {/*   id="title" */}
-        {/*   name="title" */}
-        {/*   className=" !border-t-blue-gray-200 focus:!border-t-gray-900 lg:!text-xl  !font-bold" */}
-        {/*   labelProps={{ */}
-        {/*     className: "before:content-none after:content-none", */}
-        {/*   }} */}
-        {/* /> */}
-         <Input
-          size="lg"
-          placeholder="Pais"
-          id="country"
-          name="country"
-          className=" !border-t-blue-gray-200 focus:!border-t-gray-900 lg:!text-xl !font-bold"
-          labelProps={{
-            className: "before:content-none after:content-none",
-          }}
-
-        /> 
-        </div>
-
         <div className="flex lg:flex-row lg:gap-x-3 flex-col gap-y-3">
         <Input
           size="lg"
@@ -97,7 +79,7 @@ export const Formu =()=>{
           }}
         /> 
         </div>
- <div className="flex lg:flex-row lg:gap-x-3 flex-col gap-y-3">
+       <div className="flex lg:flex-row lg:gap-x-3 flex-col gap-y-3">
         <Input
           size="lg"
           placeholder="¿En que MES planeas tu viaje?"
