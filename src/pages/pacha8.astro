@@ -138,17 +138,27 @@ function getImages(arrImgs:string[],sizes:any){
 // const imageURL2=imagekit.url({path:"/landingsPACHA/tambopata_lupeqf.png",transformation:[{"height":"400","width":"500"}]});
 
 
+
+const ip = Astro.clientAddress;
+
+console.log(ip)
+
+
 const posts = await Astro.glob('../pages/itinerarios8/*.md');
 
 const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
 
-const pacha = await Astro.glob('../pages/videos/pacha8.md')
+const pacha = await Astro.glob('../pages/videos/*.md')
+
+const princiDesc = await Astro.glob('../pages/descripcionInicial/*.md')
+
+
+
 
 ---
 
 <Layout title="Welcome to Astro.">
 	<main class="flex flex-col">
-    
     <div class="w-[100vw] general" style={`background-image: url(${FONDOENTERO.src}); background-repeat:repeat`}>
       <div class="w-full banner  flex flex-col justify-between pb-10 h-[250px] lg:h-[120vh]">
        <Image  alt="fondo" class="w-[100%] h-[100%] object-cover" inferSize src={getImages(['/landingsPACHA/FONDO.png'],{"width":"1400"})[0]!!} widths={[350,500,720,1400]}/>
@@ -178,8 +188,9 @@ const pacha = await Astro.glob('../pages/videos/pacha8.md')
 
             <div class="flex justify-center">
               <p class="font-bold text-[16px] lg:text-3xl text-[#B65F00] w-56 lg:w-full text-center lg:!text-left">
-                en 8 días: Lima, Ica, Cusco
-                y Machu Picchu</p>
+                  {princiDesc[0]!.frontmatter.desc}
+      {ip}
+              </p>
             </div>
             <div class="flex justify-center">
               <p class="text-[#7E7D82] lg:text-2xl font-bold w-56 lg:w-full text-center lg:!text-left">
@@ -191,7 +202,7 @@ const pacha = await Astro.glob('../pages/videos/pacha8.md')
 
         </div>
         <div class="w-full flex justify-center lg:w-2/3">
-       <Image  alt="pachaImg8" class="imgOne" inferSize src={getImages(['/landingsPACHA/pacha8IMG.png'],{"width":"300"})[0]!!} widths={[250,300]} sizes={`(max-width: 720px) 85vw, 100vw`}/>
+       <Image  alt="pachaImg8" class="imgOne" inferSize src={getImages([princiDesc[0]!.frontmatter.img],{"width":"300"})[0]!!} widths={[250,300]} sizes={`(max-width: 720px) 85vw, 100vw`}/>
           <!-- <img class="imgOne" width="400" height="600" -->
           <!--   src="https://res.cloudinary.com/denkdx0za/image/upload/v1711567929/I2_r4w1ac.png"> -->
         </div>

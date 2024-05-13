@@ -46,13 +46,24 @@ export const GalleryCarrousel = ({
       <LayoutGroup>
         {label ?
           <div className="grid grid-cols-3 gap-y-3 gap-x-2 w-full">
-            {srcLabelImages.map((ele, idx) => (<motion.div  className={`relative  rounded-2xl z-50 relative h-96 shrink-0 overflow-hidden `} onClick={() => poper(idx)} ><motion.img  whileHover="hover" transition={{
+            {srcLabelImages.map((ele, idx) => (<motion.div whileHover="hover" transition={{
+                duration: 1,
+                ease: "easeOut",
+              }}
+              variants={{
+                hover: {
+                  // scale: 1.10,
+                   backgroundColor: "#008000"
+                  // opacity:2,
+                },
+              }}  className={`relative  rounded-2xl z-50 relative h-96 shrink-0 overflow-hidden `} onClick={() => poper(idx)} ><motion.img  whileHover="hover" transition={{
                 duration: 1,
                 ease: "easeOut",
               }}
               variants={{
                 hover: {
                   scale: 1.10,
+                  // opacity:2,
                 },
               }} loading="lazy" decoding="async" src={ele.src} alt="gaa" className="object-cover rounded-2xl" /><p className="absolute bottom-5 left-2 text-white text-3xl font-bold">{ele.label}</p></motion.div>))}
           </div>

@@ -5,8 +5,8 @@ export const POST: APIRoute = async ({ request }) => {
 
 
 const rawFormData ={
-      statusId:formData.get("statusId")!.toString(),
-      title:formData.get("title")!.toString(),
+      mesViaje:formData.get("mesViaje")!.toString(),
+      country:formData.get("country")!.toString(),
       nombres:formData.get("nombres")!.toString(),
       apellidos:formData.get("apellidos")!.toString(),
       telefono:formData.get("telefono")!.toString(),
@@ -27,10 +27,14 @@ const rawFormData ={
   // Do something with the data, then return a success response
   
   try{
+
+  const currentDateTime = new Date()
+  const formatedDateTime = currentDateTime.toISOString()
   const params = new URLSearchParams()
-  params.append('FIELDS[STATUS_ID]','NEW')
+  params.append('FIELDS[TITLE]',"Formulario Landing Page Pachas")
+  // params.append('FIELDS[UF_CRM_LEAD_1712673755506]',rawFormData.mesViaje)
+  params.append('FIELDS[DATE_CREATE]',formatedDateTime)
   params.append('FIELDS[ADDRESS_COUNTRY]',rawFormData.country)
-  params.append('FIELDS[TITLE]',rawFormData.title)
   params.append('FIELDS[NAME]',rawFormData.nombres)
   params.append('FIELDS[LAST_NAME]',rawFormData.apellidos)
   params.append('FIELDS[EMAIL][0][VALUE]',rawFormData.correo)
@@ -38,7 +42,7 @@ const rawFormData ={
   params.append('FIELDS[PHONE][0][VALUE]',rawFormData.telefono)
   params.append('FIELDS[PHONE][0][VALUE_TYPE]','Work')
   
-  const res = await fetch('https://jushka.bitrix24.es/rest/307/38vukgi2zayzr54s/crm.lead.add.json', {
+  const res = await fetch('https://jushka.bitrix24.es/rest/307/4ndowpagdqsiu0z7/crm.lead.add.json', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
