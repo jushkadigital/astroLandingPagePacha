@@ -62,7 +62,7 @@ const rawFormData ={
   params.append('FIELDS[TITLE]',"Formulario Landing Page Pachas")
   // params.append('FIELDS[UF_CRM_LEAD_1712673755506]',rawFormData.mesViaje)
   params.append('FIELDS[DATE_CREATE]',formatedDateTime)
-  params.append('FIELDS[UF_CRM_1623869376]',hashPaises.indexOf(rawFormData.country.toLowerCase()).toString() || `24`)
+  params.append('FIELDS[UF_CRM_1623869376][ITEMS]', hashPaises.indexOf(rawFormData.country.toLowerCase()).toString() || `24`)
   params.append('FIELDS[NAME]',rawFormData.nombres)
   params.append('FIELDS[LAST_NAME]',rawFormData.apellidos)
   params.append('FIELDS[EMAIL][0][VALUE]',rawFormData.correo)
