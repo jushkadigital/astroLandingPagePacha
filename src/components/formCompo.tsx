@@ -32,6 +32,10 @@ export const Formu =({objRes}:Props)=>{
   }
 
   return (
+    <div className="flex flex-col">
+      <h2 className="text-[#B65F00]  text-[15px] lg:text-2xl font-extrabold text-left ">
+        FORMULARIO DE CONTACTO
+      </h2>
   <form onSubmit={submit} className="mt-8 mb-2 w-10/12">
       <div className="mb-1 flex flex-col lg:gap-6 gap-3">
         <div className="flex lg:flex-row lg:gap-x-3 flex-col gap-y-3">
@@ -103,10 +107,12 @@ export const Formu =({objRes}:Props)=>{
         {/*   // containerProps={{className:"h-36 p-0 m-0"}} */}
         {/* /> */}
            {/* <Textarea id="consulta" name="consulta" size="lg" placeholder="Consulta"  className="lg:!text-xl !font-bold"/> */}
-        <Button type="submit" className="mt-6 text-white bg-[#B65F00] lg:text-xl text-sm" >
-          Enviar
+        <Button type="submit" disabled={responseMessage == "Success"}  className="mt-6 text-white bg-[#B65F00] lg:text-xl text-sm" >
+          {/* Enviar */}
+          {responseMessage == "Error" ? "Ocurrio un error intentalo de nuevo": "Enviar"}
         </Button>
       </div>
     </form>
+    </div>
   );
 }

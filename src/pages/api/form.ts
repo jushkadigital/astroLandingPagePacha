@@ -84,7 +84,7 @@ console.log(data)
 
      return new Response(
     JSON.stringify({
-      message: "Success!"
+      message: "Success"
     }),
     { status: 200 }
   )
@@ -92,9 +92,9 @@ console.log(data)
   catch{
        return new Response(
     JSON.stringify({
-      message: "Success!"
+      message: "Error"
     }),
-    { status: 200 }
+    { status: 400 }
   )
   }
 
