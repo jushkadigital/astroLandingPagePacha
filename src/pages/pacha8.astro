@@ -341,9 +341,9 @@ const resultado = await getIpInfo()
         <!-- <div id="mobileItinerario" class="flex flex-col gap-y-10 mb-16"> </div> -->
 
 
-        <div class="flex relative flex-col w-full mb-3  mt-5  font-bold incluye text-white">
+        <div class="flex relative flex-col w-full h-full mb-3  mt-5  font-bold incluye text-white">
           <!-- <Image  alt="fondo" class="w-[100%] h-[100%] object-cover" inferSize src={getImages(['/landingsPACHA/FONDO.png'],{"width":"1400"})[0]!!} widths={[350,500,720,1400]}/> -->
-          <Image alt="incluye" class="w-full h-1/2  object-cover" inferSize src={getImages(['/landingsPACHA/IMAGE-INCLU.png'],{"width":"800"})[0]!!} widths={[100,400,800]}/>
+          <Image alt="incluye" class="w-full h-full  object-cover" inferSize src={getImages(['/landingsPACHA/IMAGE-INCLU.png'],{"aspectRatio":"square","width":"800"})[0]!!} widths={[100,400,800]}/>
           <div class="absolute  w-full p-4 lg:p-10 px-6 lg:px-12 ">
           <!-- <div class="absolute  w-full "> -->
             <div class="flex flex-row ">
@@ -416,7 +416,8 @@ const resultado = await getIpInfo()
                         clip-rule="evenodd" />
                     </svg>
                     <span class="">
-                      Guías profesionales para cada atractivo.</span>
+                      Guías profesionales para cada atractivo.
+                    </span>
                   </div>
                 </div>
               </div>

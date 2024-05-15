@@ -1,21 +1,20 @@
 import type { APIRoute } from "astro";
 
-export const POST: APIRoute = async ({ params,request }) => {
+export const POST: APIRoute = async ({ params,request,redirect }) => {
   const formData = await request.formData();
 
   // console.log(params)
 
 const rawFormData ={
-      mesViaje:formData.get("mesViaje")!.toString(),
-      country:formData.get("country")!.toString(),
+      // mesViaje:formData.get("mesViaje")!.toString(),
+      // country:formData.get("country")!.toString(),
       nombres:formData.get("nombres")!.toString(),
       apellidos:formData.get("apellidos")!.toString(),
       telefono:formData.get("telefono")!.toString(),
       correo:formData.get("correo")!.toString(),
       phoneCode:formData.get("phoneCode")!.toString(),
- 
+      mesViaje: formData.get("month")!.toString()
     }
-      
   // console.log(rawFormData)
  
   // Validate the data - you'll probably want to do more than this
@@ -60,9 +59,9 @@ const rawFormData ={
   const formatedDateTime = currentDateTime.toISOString()
   const params = new URLSearchParams()
   params.append('FIELDS[TITLE]',"Formulario Landing Page Pachas")
-  // params.append('FIELDS[UF_CRM_LEAD_1712673755506]',rawFormData.mesViaje)
+  params.append('FIELDS[UF_CRM_LEAD_1712673755506]',rawFormData.mesViaje)
   params.append('FIELDS[DATE_CREATE]',formatedDateTime)
-  params.append('FIELDS[ADDRESS_COUNTRY]',rawFormData.country)
+  // params.append('FIELDS[ADDRESS_COUNTRY]',rawFormData.country)
   params.append('FIELDS[NAME]',rawFormData.nombres)
   params.append('FIELDS[LAST_NAME]',rawFormData.apellidos)
   params.append('FIELDS[EMAIL][0][VALUE]',rawFormData.correo)
@@ -82,12 +81,13 @@ const rawFormData ={
 const data = await res.json()
 console.log(data)
 
-     return new Response(
-    JSON.stringify({
-      message: "Success"
-    }),
-    { status: 200 }
-  )
+   return redirect('https://pdsviajes.com/gracias-formulario/',307)
+  //    return new Response(
+  //   JSON.stringify({
+  //     message: "Success"
+  //   }),
+  //   { status: 200 }
+  // )
   }
   catch{
        return new Response(
