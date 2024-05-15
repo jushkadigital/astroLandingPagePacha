@@ -202,31 +202,7 @@ const resultado = await getIpInfo()
             </div>
 
             <div class="flex justify-center">
-              <p class="font-bold text-[16px] lg:text-3xl text-[#B65F00] w-56 lg:w-full text-center lg:!text-left">
-                  {princiDesc[0]!.frontmatter.desc}
-      <!-- {ip} -->
-      <!-- {resultado.countryName} -->
-      <!-- {resultado.countryCode} -->
-              </p>
-            </div>
-            <div class="flex justify-center">
-              <p class="text-[#7E7D82] lg:text-2xl font-bold w-56 lg:w-full text-center lg:!text-left">
-                Sumérgete en la Cultura ancestral y
-                los paisajes impresionantes de Perú
-                en un viaje inolvidable</p>
-            </div>
-          </div>
-
-        </div>
-        <div class="w-full flex justify-center lg:w-2/3">
-       <Image  alt="pachaImg8" class="imgOne" inferSize src={getImages([princiDesc[0]!.frontmatter.img],{"width":"300"})[0]!!} widths={[250,300]} sizes={`(max-width: 720px) 85vw, 100vw`}/>
-          <!-- <img class="imgOne" width="400" height="600" -->
-          <!--   src="https://res.cloudinary.com/denkdx0za/image/upload/v1711567929/I2_r4w1ac.png"> -->
-        </div>
-
-      </div>
-
-      <div>
+              <p class="font-bold text-[16px] lg:text-3xl text-[#B65F00] w-56 lg:w-full text-center lg:!text-left"> {princiDesc[0]!.frontmatter.desc} <!-- {ip} --> <!-- {resultado.countryName} --> <!-- {resultado.countryCode} --> </p> </div> <div class="flex justify-center"> <p class="text-[#7E7D82] lg:text-2xl font-bold w-56 lg:w-full text-center lg:!text-left"> Sumérgete en la Cultura ancestral y los paisajes impresionantes de Perú en un viaje inolvidable</p> </div> </div> </div> <div class="w-full flex justify-center lg:w-2/3"> <Image  alt="pachaImg8" class="imgOne" inferSize src={getImages([princiDesc[0]!.frontmatter.img],{"width":"300"})[0]!!} widths={[250,300]} sizes={`(max-width: 720px) 85vw, 100vw`}/> <!-- <img class="imgOne" width="400" height="600" --> <!--   src="https://res.cloudinary.com/denkdx0za/image/upload/v1711567929/I2_r4w1ac.png"> --> </div> </div> <div>
         <h2 class=" text-[#B65F00] my-16 text-[20px] lg:text-3xl font-extrabold text-center mt-[40px] mb-[48px]">UN
           VIAJE DE ENSUEÑO</h2>
       </div>
@@ -260,232 +236,233 @@ const resultado = await getIpInfo()
             <div class="text-center lg:!text-left mt-2 lg:mt-5">
               <p class="font-bold text-[16px] lg:text-2xl text-[#5C5C5C] ">Exclusividad de Servicios</p>
               <p class="text-[#7C7B80] text-[16px] lg:text-xl">Hoteles de 3 estrellas, Trenes
-              turísticos y movilidad confortables.</p>
+                turísticos y movilidad confortables.</p>
+            </div>
+
+
+          </div>
+          <div class="flex flex-col w-2/3 justify-center items-center">
+            <Image  alt="icc3" class="imgIconViaje" inferSize src={ICONOCATEGORIAS} widths={[100,300]} sizes={`(max-width: 720px) 50vw, 100vw`}/>
+            <!-- <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-CATEGORIAS.png"> -->
+            <div class="text-center lg:!text-left mt-2 lg:mt-5">
+              <p class="font-bold text-[16px] lg:text-2xl text-[#5C5C5C] ">5 Categorías de Turismo</p>
+              <p class="text-[#7C7B80] text-[16px] lg:text-xl">Turimos Cultural, Místico, Folklorico,
+                Aventura y Gastronómia.</p>
+            </div>
+
+
+          </div>
+          <div class="flex flex-col w-2/3 justify-center items-center">
+            <Image  alt="icc4" class="imgIconViaje" inferSize src={ICONOGUIAS} widths={[100,300]} sizes={`(max-width: 720px) 50vw, 100vw`}/>
+            <!-- <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-GUIAS.png"> -->
+            <div class="text-center lg:!text-left mt-2 lg:mt-5">
+              <p class="font-bold text-[16px] lg:text-2xl text-[#5C5C5C] "> Seguridad y Privacidad</p>
+              <p class="text-[#7C7B80] text-[16px] lg:text-xl">Agentes y guias profesionales con
+                gran experiencia en rubro de viajes.</p>
+            </div>
+
           </div>
 
 
         </div>
-        <div class="flex flex-col w-2/3 justify-center items-center">
-        <Image  alt="icc3" class="imgIconViaje" inferSize src={ICONOCATEGORIAS} widths={[100,300]} sizes={`(max-width: 720px) 50vw, 100vw`}/>
-          <!-- <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-CATEGORIAS.png"> -->
-          <div class="text-center lg:!text-left mt-2 lg:mt-5">
-            <p class="font-bold text-[16px] lg:text-2xl text-[#5C5C5C] ">5 Categorías de Turismo</p>
-            <p class="text-[#7C7B80] text-[16px] lg:text-xl">Turimos Cultural, Místico, Folklorico,
-              Aventura y Gastronómia.</p>
-          </div>
 
-
+        <div>
+          <h2 class=" text-[#B65F00] lg:my-16 text-[20px] lg:text-3xl font-extrabold text-center mt-[40px] mb-[48px]">
+            CLIENTES
+            FELICES</h2>
         </div>
-        <div class="flex flex-col w-2/3 justify-center items-center">
-        <Image  alt="icc4" class="imgIconViaje" inferSize src={ICONOGUIAS} widths={[100,300]} sizes={`(max-width: 720px) 50vw, 100vw`}/>
-          <!-- <img loading="lazy" class="imgIconViaje" width="100" height="50" src="../ICONO-GUIAS.png"> -->
-          <div class="text-center lg:!text-left mt-2 lg:mt-5">
-            <p class="font-bold text-[16px] lg:text-2xl text-[#5C5C5C] "> Seguridad y Privacidad</p>
-            <p class="text-[#7C7B80] text-[16px] lg:text-xl">Agentes y guias profesionales con
-              gran experiencia en rubro de viajes.</p>
-          </div>
-          
-        </div>
-
-
-      </div>
-
-      <div>
-        <h2 class=" text-[#B65F00] lg:my-16 text-[20px] lg:text-3xl font-extrabold text-center mt-[40px] mb-[48px]">
-          CLIENTES
-          FELICES</h2>
-      </div>
-      <div>
+        <div>
           <div class="miniDiv">
-      <ImageGrid client:only srcImages={getImages(carrouser0,{"aspectRatio":"3-4","width":"400"})} label={false}>
-			</ImageGrid>   
+            <ImageGrid client:only srcImages={getImages(carrouser0,{"aspectRatio":"3-4","width":"400"})} label={false}>
+            </ImageGrid>   
           </div>
 
-        <!-- <div id="galleryClientesFelices" class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 px-10 lg:px-0"> -->
+          <!-- <div id="galleryClientesFelices" class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 px-10 lg:px-0"> -->
 
-        <!-- </div> -->
+          <!-- </div> -->
 
-      </div>
-      <div>
-        <h2 class=" text-[#B65F00] lg:my-16 text-[20px] lg:text-3xl font-extrabold text-center mt-[40px] mb-[48px]"> LOS
-          MEJORES
-          DESTINOS QUE PODRAS CONOCER</h2>
-      </div>
-      <div>
+        </div>
+        <div>
+          <h2 class=" text-[#B65F00] lg:my-16 text-[20px] lg:text-3xl font-extrabold text-center mt-[40px] mb-[48px]"> LOS
+            MEJORES
+            DESTINOS QUE PODRAS CONOCER</h2>
+        </div>
+        <div>
           <div class="miniDiv">
-      <ImageGrid client:only  srcLabelImages={mejoresDestinos}  label={true}>
-			</ImageGrid>   
+            <ImageGrid client:only  srcLabelImages={mejoresDestinos}  label={true}>
+            </ImageGrid>   
           </div>
 
-        <div id="galleryMejoresDestinos" class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 px-10 lg:px-0">
+          <div id="galleryMejoresDestinos" class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 px-10 lg:px-0">
 
-        </div>
-
-        <!-- Slider main container -->
-        <div id="swiper1" class="swiper">
-          <!-- Additional required wrapper -->
-          <div id="MejoresDestinos" class="swiper-wrapper">
-            <!-- Slides -->
-            <!-- <div class="swiper-slide">Slide 1</div> -->
-            <!-- <div class="swiper-slide">Slide 2</div> -->
-            <!-- <div class="swiper-slide">Slide 3</div> -->
-            ...
           </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
 
-          <!-- If we need navigation buttons -->
-          <!-- <div class="swiper-button-prev"></div> -->
-          <!-- <div class="swiper-button-next"></div> -->
+          <!-- Slider main container -->
+          <div id="swiper1" class="swiper">
+            <!-- Additional required wrapper -->
+            <div id="MejoresDestinos" class="swiper-wrapper">
+              <!-- Slides -->
+              <!-- <div class="swiper-slide">Slide 1</div> -->
+              <!-- <div class="swiper-slide">Slide 2</div> -->
+              <!-- <div class="swiper-slide">Slide 3</div> -->
+              ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <!-- <div class="swiper-button-prev"></div> -->
+            <!-- <div class="swiper-button-next"></div> -->
+          </div>
         </div>
-      </div>
 
-      <div class="mt-[40px] mb-[48px]">
-        <h2 class=" text-[#B65F00] text-[20px] lg:text-3xl font-extrabold text-center ">ITINERARIO</h2>
-        <p class="font-extrabold text-[#5C5C5C] text-[16px] text-center">EL CAMINO DE LOS TIEMPOS 8D/7N</p>
-      </div>
+        <div class="mt-[40px] mb-[48px]">
+<h2 class=" text-[#B65F00] text-[20px] lg:text-3xl font-extrabold text-center ">ITINERARIO</h2>
+<p class="font-extrabold text-[#5C5C5C] text-[16px] text-center">EL CAMINO DE LOS TIEMPOS 8D/7N</p>
+        </div>
 
-        
-      <div class="w-full mb-10">
-          
-        <YouTube id={pacha[0]!.frontmatter.video2} posterQuality="high" class="mx-auto" />
-        <!-- <iframe loading="lazy"  src="https://www.youtube.com/embed/KJTQOOSPceo" title="YouTube video player" -->
-        <!--   allow="" -->
-        <!--   allowfullscreen></iframe> -->
+
+        <div class="w-full mb-10">
+
+          <YouTube id={pacha[0]!.frontmatter.video2} posterQuality="high" class="mx-auto" />
+          <!-- <iframe loading="lazy"  src="https://www.youtube.com/embed/KJTQOOSPceo" title="YouTube video player" -->
+          <!--   allow="" -->
+          <!--   allowfullscreen></iframe> -->
           <!-- <iframe -->
           <!-- width="640" height="360" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" -->
           <!-- style="height: auto; width: 100%; aspect-ratio: 640 / 360;" allowfullscreen frameborder="0" -->
           <!-- class="lazy-iframe" data-src="https://www.youtube.com/embed/KJTQOOSPceo?si=6DzXimL6KCYHiWmt" -->
           <!-- ></iframe> -->
-      </div>
+        </div>
 
-      <div id="itinerario" >
-            <Itinerario client:only srcImagesDesk={posts.map(({frontmatter})=>({src:frontmatter.srcDesk,title:frontmatter.title,desc:frontmatter.desc}))}  srcImagesMobile={posts.map(({frontmatter})=>({src:frontmatter.src,title:frontmatter.title,desc:frontmatter.desc}))}/>
-     </div>
-      <!-- <div id="mobileItinerario" class="flex flex-col gap-y-10 mb-16"> </div> -->
+        <div id="itinerario" >
+          <Itinerario client:only srcImagesDesk={posts.map(({frontmatter})=>({src:frontmatter.srcDesk,title:frontmatter.title,desc:frontmatter.desc}))}  srcImagesMobile={posts.map(({frontmatter})=>({src:frontmatter.src,title:frontmatter.title,desc:frontmatter.desc}))}/>
+        </div>
+        <!-- <div id="mobileItinerario" class="flex flex-col gap-y-10 mb-16"> </div> -->
 
 
-      <div class="flex flex-col w-full mb-3  mt-5  font-bold incluye text-white">
-       <!-- <Image  alt="fondo" class="w-[100%] h-[100%] object-cover" inferSize src={getImages(['/landingsPACHA/FONDO.png'],{"width":"1400"})[0]!!} widths={[350,500,720,1400]}/> -->
-          <Image alt="incluye" class="w-[100%] h-[30vh] lg:h-[85vh] object-cover" inferSize src={getImages(['/landingsPACHA/IMAGE-INCLU.png'],{"width":"1000"})[0]!!} widths={[350,700,1000]}/>
-          <div class="absolute p-4 lg:p-10 px-6 lg:px-12 ">
+        <div class="flex relative flex-col w-full mb-3  mt-5  font-bold incluye text-white">
+          <!-- <Image  alt="fondo" class="w-[100%] h-[100%] object-cover" inferSize src={getImages(['/landingsPACHA/FONDO.png'],{"width":"1400"})[0]!!} widths={[350,500,720,1400]}/> -->
+          <Image alt="incluye" class="w-full h-1/2  object-cover" inferSize src={getImages(['/landingsPACHA/IMAGE-INCLU.png'],{"width":"800"})[0]!!} widths={[100,400,800]}/>
+          <div class="absolute  w-full p-4 lg:p-10 px-6 lg:px-12 ">
+          <!-- <div class="absolute  w-full "> -->
             <div class="flex flex-row ">
-          <div class="w-1/2">
-            <p class=" pb-2 lg:pb-5 text-[12px] lg:text-2xl lg:mb-4 ">INCLUSIONES </p>
-            <div class="flex flex-col lg:gap-y-5 text-[10px] lg:text-xl">
-              <div class="flex flex-row ">
+              <div class="w-1/2">
+                <p class=" pb-2 lg:pb-5 text-[12px] lg:text-2xl lg:mb-4 ">INCLUSIONES </p>
+                <div class="flex flex-col gap-y-2 lg:gap-y-5 text-[10px] md:text-lg lg:text-xl">
+                  <div class="flex flex-row ">
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                  class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
-                  <path fill-rule="evenodd"
-                    d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                    clip-rule="evenodd" />
-                </svg>
-                <span class="">Vuelos ida y vuelta (Lima – Cusco).</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                      class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
+                      <path fill-rule="evenodd"
+                        d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                        clip-rule="evenodd" />
+                    </svg>
+                    <span class="">Vuelos ida y vuelta (Lima – Cusco).</span>
 
+                  </div>
+
+                  <div class="flex flex-row ">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                      class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
+                      <path fill-rule="evenodd"
+                        d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                        clip-rule="evenodd" />
+                    </svg>
+                    <span class="">Hotel 3 estrellas.</span>
+
+                  </div>
+                  <div class="flex flex-row ">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                      class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
+                      <path fill-rule="evenodd"
+                        d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                        clip-rule="evenodd" />
+                    </svg>
+                    <span class="">Alimentación (Desayuno, Almuerzo).</span>
+
+                  </div>
+                  <div class="flex flex-row ">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                      class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
+                      <path fill-rule="evenodd"
+                        d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                        clip-rule="evenodd" />
+                    </svg>
+                    <span class="">Traslados y recojos privados
+                      (Aeropuerto – Hotel).</span>
+
+                  </div>
+                  <div class="flex flex-row ">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                      class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
+                      <path fill-rule="evenodd"
+                        d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                        clip-rule="evenodd" />
+                    </svg>
+                    <span class="">Entradas a los atractivos turísticos
+                      mencionados.</span>
+                  </div>
+                  <div class="flex flex-row ">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                      class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
+                      <path fill-rule="evenodd"
+                        d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                        clip-rule="evenodd" />
+                    </svg>
+                    <span class="">
+                      Guías profesionales para cada atractivo.</span>
+                  </div>
+                </div>
               </div>
-                
-              <div class="flex flex-row ">
+              <div class="w-1/2 flex justify-center items-center border-[#84876F] border-l-2 pl-5 lg:pl-0">
+                <div class="flex flex-col gap-y-5 lg:gap-y-10">
+                  <div>
+                    <p class="text-[12px] lg:text-2xl">NO INCLUYE </p>
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                  class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
-                  <path fill-rule="evenodd"
-                    d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                    clip-rule="evenodd" />
-                </svg>
-                <span class="">Hotel 3 estrellas.</span>
-
-              </div>
-              <div class="flex flex-row ">
-
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                  class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
-                  <path fill-rule="evenodd"
-                    d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                    clip-rule="evenodd" />
-                </svg>
-                <span class="">Alimentación (Desayuno, Almuerzo).</span>
-
-              </div>
-              <div class="flex flex-row ">
-
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                  class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
-                  <path fill-rule="evenodd"
-                    d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                    clip-rule="evenodd" />
-                </svg>
-                <span class="">Traslados y recojos privados
-                  (Aeropuerto – Hotel).</span>
-
-              </div>
-              <div class="flex flex-row ">
-
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                  class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
-                  <path fill-rule="evenodd"
-                    d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                    clip-rule="evenodd" />
-                </svg>
-                <span class="">Entradas a los atractivos turísticos
-                  mencionados.</span>
-              </div>
-              <div class="flex flex-row ">
-
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                  class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
-                  <path fill-rule="evenodd"
-                    d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                    clip-rule="evenodd" />
-                </svg>
-                <span class="">
-                  Guías profesionales para cada atractivo.</span>
+                    <div class="flex flex-row ">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
+                        <path fill-rule="evenodd"
+                          d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                          clip-rule="evenodd" />
+                      </svg>
+                      <span class=" text-[10px] lg:text-xl"> Vuelos internacionales</span>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="text-[12px] lg:text-2xl"> HIGHLIGHTS</p>
+                    <div class="flex flex-row ">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
+                        <path fill-rule="evenodd"
+                          d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                          clip-rule="evenodd" />
+                      </svg>
+                      <span class="text-[10px] lg:text-xl"> Mucho confort y aventura la 100%</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="w-1/2 flex justify-center items-center border-[#84876F] border-l-2 pl-5 lg:pl-0">
-            <div class="flex flex-col gap-y-5 lg:gap-y-10">
-              <div>
-                <p class="text-[12px] lg:text-2xl">NO INCLUYE </p>
-
-                <div class="flex flex-row ">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                    class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
-                    <path fill-rule="evenodd"
-                      d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                      clip-rule="evenodd" />
-                  </svg>
-                  <span class=" text-[10px] lg:text-xl"> Vuelos internacionales</span>
-                </div>
-              </div>
-              <div>
-                <p class="text-[12px] lg:text-2xl"> HIGHLIGHTS</p>
-                <div class="flex flex-row ">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                    class="w-3 h-3 lg:w-6 lg:h-6 lg:mr-3 text-[#B65F00]">
-                    <path fill-rule="evenodd"
-                      d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                      clip-rule="evenodd" />
-                  </svg>
-                  <span class="text-[10px] lg:text-xl"> Mucho confort y aventura la 100%</span>
-                </div>
+            <div class="flex justify-center mt-2 lg:mt-5">
+              <div class="flex flex-col text-center rounded-[35px] bg-[#B65F00] px-16 py-3 text-white">
+                <p class="text-[6px] lg:text-xl"> EL VIAJE DE TUS SUEÑOS TE ESPERA</p>
+                <a href="https://pdsviajes.com/metodos-de-pago/"
+                  class=" font-black lg:font-extrabold text-[10px] lg:text-2xl"> ¡RESERVA AHORA!</a>
               </div>
             </div>
           </div>
         </div>
-        <div class="flex justify-center mt-2 lg:mt-5">
-          <div class="flex flex-col text-center rounded-[35px] bg-[#B65F00] px-16 py-3 text-white">
-            <p class="text-[6px] lg:text-xl"> EL VIAJE DE TUS SUEÑOS TE ESPERA</p>
-            <a href="https://pdsviajes.com/metodos-de-pago/"
-              class=" font-black lg:font-extrabold text-[10px] lg:text-2xl"> ¡RESERVA AHORA!</a>
-          </div>
-        </div>
-          </div>
-      </div>
 
-      <div class="lg:mt-36 mt-10">
-        <h2 class=" text-[#B65F00] lg:my-16 text-[20px] lg:text-3xl font-extrabold text-center  mb-5">
-          SOBRE EL HOTEL
+        <div class="lg:mt-36 mt-24">
+          <h2 class=" text-[#B65F00] lg:my-16 text-[20px] lg:text-3xl font-extrabold text-center  mb-5">
+            SOBRE EL HOTEL
         </h2>
       </div>
       <div class="miniDiv">

@@ -92,11 +92,4 @@ console.log(data)
   catch{
        return new Response(
     JSON.stringify({
-      message: "Error"
-    }),
-    { status: 400 }
-  )
-  }
-
-
-};
+      message: "Error" }), { status: 400 }) } };
