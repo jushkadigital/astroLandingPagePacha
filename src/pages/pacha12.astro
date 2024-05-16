@@ -145,7 +145,7 @@ const ip = Astro.clientAddress;
 console.log(ip)
 
 
-const posts = await Astro.glob('../pages/itinerarios8/*.md');
+const posts = await Astro.glob('../pages/itinerarios12/*.md');
 
 const faqs = await Astro.glob('../pages/preguntasFrecuentes/*.md')
 
@@ -203,13 +203,13 @@ const resultado = await getIpInfo()
             </div>
 
             <div class="flex justify-center">
-              <p class="font-bold text-[16px] lg:text-3xl text-[#B65F00] w-56 lg:w-full text-center lg:!text-left"> {princiDesc[0]!.frontmatter.desc} <!-- {ip} --> <!-- {resultado.countryName} --> <!-- {resultado.countryCode} --> </p> </div> <div class="flex justify-center"> <p class="text-[#7E7D82] lg:text-2xl font-bold w-56 lg:w-full text-center lg:!text-left"> Sumérgete en la Cultura ancestral y los paisajes impresionantes de Perú en un viaje inolvidable</p> </div> </div> </div> <div class="w-full flex justify-center lg:w-2/3"> <Image  alt="pachaImg8" class="imgOne" inferSize src={getImages([princiDesc[0]!.frontmatter.img],{"width":"300"})[0]!!} widths={[250,300]} sizes={`(max-width: 720px) 85vw, 100vw`}/> <!-- <img class="imgOne" width="400" height="600" --> <!--   src="https://res.cloudinary.com/denkdx0za/image/upload/v1711567929/I2_r4w1ac.png"> --> </div> </div> <div>
+              <p class="font-bold text-[16px] lg:text-3xl text-[#B65F00] w-56 lg:w-full text-center lg:!text-left"> {princiDesc[2]!.frontmatter.desc} <!-- {ip} --> <!-- {resultado.countryName} --> <!-- {resultado.countryCode} --> </p> </div> <div class="flex justify-center"> <p class="text-[#7E7D82] lg:text-2xl font-bold w-56 lg:w-full text-center lg:!text-left"> Sumérgete en la Cultura ancestral y los paisajes impresionantes de Perú en un viaje inolvidable</p> </div> </div> </div> <div class="w-full flex justify-center lg:w-2/3"> <Image  alt="pachaImg8" class="imgOne" inferSize src={getImages([princiDesc[2]!.frontmatter.img],{"width":"300"})[0]!!} widths={[250,300]} sizes={`(max-width: 720px) 85vw, 100vw`}/> <!-- <img class="imgOne" width="400" height="600" --> <!--   src="https://res.cloudinary.com/denkdx0za/image/upload/v1711567929/I2_r4w1ac.png"> --> </div> </div> <div>
         <h2 class=" text-[#B65F00] my-16 text-[20px] lg:text-3xl font-extrabold text-center mt-[40px] mb-[48px]">UN
           VIAJE DE ENSUEÑO</h2>
       </div>
 
         <div class="w-full mb-10">
-          <YouTube id={pacha[0]!.frontmatter.video1} posterQuality="high" class="mx-auto"/>
+          <YouTube id={pacha[2]!.frontmatter.video1} posterQuality="high" class="mx-auto"/>
 
           <!-- <iframe -->
           <!--   width="640" height="360" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" -->
@@ -319,13 +319,13 @@ const resultado = await getIpInfo()
 
         <div class="mt-[40px] mb-[48px]">
 <h2 class=" text-[#B65F00] text-[20px] lg:text-3xl font-extrabold text-center ">ITINERARIO</h2>
-<p class="font-extrabold text-[#5C5C5C] text-[16px] text-center">EL CAMINO DE LOS TIEMPOS 8D/7N</p>
+<p class="font-extrabold text-[#5C5C5C] text-[16px] text-center">EL CAMINO DE LOS TIEMPOS 12D/11N</p>
         </div>
 
 
         <div class="w-full mb-10">
 
-          <YouTube id={pacha[0]!.frontmatter.video2} posterQuality="high" class="mx-auto" />
+          <YouTube id={pacha[2]!.frontmatter.video2} posterQuality="high" class="mx-auto" />
           <!-- <iframe loading="lazy"  src="https://www.youtube.com/embed/KJTQOOSPceo" title="YouTube video player" -->
           <!--   allow="" -->
           <!--   allowfullscreen></iframe> -->
@@ -1018,7 +1018,7 @@ trabajamos continuamente para conseguir la
 
           
       <div class="w-full mb-10">
-        <YouTube id={pacha[0]!.frontmatter.video3} posterQuality="high" class="mx-auto" />
+        <YouTube id={pacha[2]!.frontmatter.video3} posterQuality="high" class="mx-auto" />
         <!-- <iframe  src="https://www.youtube.com/embed/0Zpz2npJ56k" title="YouTube video player" -->
         <!--   loading="lazy" -->
         <!--   allow="" -->
@@ -1323,3 +1323,5 @@ position: absolute;
     
     }
 	</style>
+
+

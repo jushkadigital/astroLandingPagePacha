@@ -34,6 +34,7 @@ export const Formu = ({ objRes }: Props) => {
       body: formData,
     });
     const data = await response.json();
+    window.location.href = 'https://pdsviajes.com/gracias-formulario/'
     setLoading(prev => false)
     if (data.message) {
       setResponseMessage(data.message);

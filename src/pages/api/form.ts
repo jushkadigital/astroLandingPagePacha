@@ -74,20 +74,21 @@ const rawFormData ={
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
       // 'API-Key': process.env.DATA_API_KEY!,
+      
     },
     body:params
   })
 
-const data = await res.json()
-console.log(data)
+// const data = await res.json()
+// console.log(data)
 
-   return redirect('https://pdsviajes.com/gracias-formulario/',307)
-  //    return new Response(
-  //   JSON.stringify({
-  //     message: "Success"
-  //   }),
-  //   { status: 200 }
-  // )
+   // return redirect('https://pdsviajes.com/gracias-formulario/')
+     return new Response(
+    JSON.stringify({
+      message: "Success"
+    }),
+    { status: 200 }
+  )
   }
   catch{
        return new Response(
