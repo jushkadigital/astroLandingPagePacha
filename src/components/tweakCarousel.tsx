@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import './reactStyleTweak.css'
-// import { motion, useMotionValue } from "framer-motion";
 
 // const imgs = [
 //   "/imgs/nature/1.jpg",
