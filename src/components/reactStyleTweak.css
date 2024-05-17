@@ -59,7 +59,7 @@
 	min-height: 300px;
 }
 
-ul {
+.containerTweak ul {
 	display: flex;
 	/* gap: 1rem; */
 	padding: 0;
@@ -116,7 +116,7 @@ ul {
 	flex-direction: column;
 }
 
-li {
+.containerTweak li {
 	height: 80%;
 	aspect-ratio: 4 / 3;
 	background: hsl(0 0% 90%);
