@@ -179,7 +179,7 @@ export const Formu = ({ objRes }: Props) => {
             Telefono *
           </Typography>
           <Input
-            type="tel"
+            type="number"
             placeholder="Telefono"
             id="telefono"
             name="telefono"
