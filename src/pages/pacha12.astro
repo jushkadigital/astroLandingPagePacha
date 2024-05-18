@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import ImageGrid from '../components/ImageGrid';
 import {Formu} from "../components/formCompo"
+import {ScrollSwipper} from "../components/scrollSwipper"
 import {TweakCarousel} from "../components/tweakCarousel"
 import {FAQ} from '../components/faq';
 import Itinerario from '../components/Itinerario';
@@ -127,6 +128,16 @@ const autorizaciones = [
   '/landingsPACHA/DSC00171.png',
   '/landingsPACHA/DSC00187.png',
   '/landingsPACHA/DSC00177.png',
+]
+
+
+const voyager = [
+  '/landingsPACHA/tren01.jpg',
+  '/landingsPACHA/tren02.jpg',
+  '/landingsPACHA/tren03.jpg',
+  '/landingsPACHA/tren04.jpg',
+  '/landingsPACHA/tren05.jpg',
+  '/landingsPACHA/tren06.jpg',
 ]
 
 
@@ -464,7 +475,7 @@ const resultado = await getIpInfo()
           </div>
         </div>
 
-        <div class="lg:mt-36 mt-24">
+        <div class="lg:mt-36 mt-36">
           <h2 class=" text-[#B65F00] lg:my-16 text-[20px] lg:text-3xl font-extrabold text-center  mb-5">
             SOBRE EL HOTEL
           </h2>
@@ -522,9 +533,10 @@ const resultado = await getIpInfo()
         </div>
         <div class="border-2 rounded-2xl lg:rounded-[35px] border-gray-500  text-gray-600 py-1 lg:py-4 mb-5 lg:mb-10 shadow-2xl">
           <div class="flex flex-col justify-center items-center p-2 lg:px-0">
-            <Image  alt="Voyager" class=" rounded-2xl lg:rounded-[35px] " inferSize src={getImages(['/landingsPACHA/incaReilVoyager.jpg'],{"width":"900"})[0]!!} widths={[350,900]}/>
+            <!-- <Image  alt="Voyager" class=" rounded-2xl lg:rounded-[35px] " inferSize src={getImages(['/landingsPACHA/incaReilVoyager.jpg'],{"width":"900"})[0]!!} widths={[350,900]}/> -->
             <!-- <img src="https://res.cloudinary.com/denkdx0za/image/upload/v1711811649/VOYAGUER_boq8lm.png" width="900" -->
             <!-- height="600" class="rounded-[35px] w-[95%] "> -->
+              <ScrollSwipper client:only  cards={getImages(voyager,{})}/>
             <div class="mt-5">
               <h3 class="text-[20px] lg:text-2xl text-center py-1 lg:py-4 font-bold"> The Voyager</h3>
               <p class="text-[15px] text-xl text-center pb-5 lg:pb-10">Comodos asientos con mesas plegables
@@ -570,7 +582,7 @@ const resultado = await getIpInfo()
         <div>
 
           <div class="miniDiv">
-            <ImageGrid client:only srcImages={getImages(carrouserTren,{"aspectRatio":"3-4","width":"400"})} label={false}/>
+            <!-- <ImageGrid client:only srcImages={getImages(carrouserTren,{"aspectRatio":"3-4","width":"400"})} label={false}/> -->
           </div>
 
 
@@ -857,7 +869,7 @@ trabajamos continuamente para conseguir la
         <div class="w-full lg:w-1/2 lg:pl-10">
           <div
             class="flex flex-col justify-center items-center lg:gap-y-6 border-2 border-gray-400 rounded-[25px] py-6 shadow-2xl shadow-gray-700">
-            <div class="flex flex-row lg:flex-col items-center lg:gap-y-6 gap-x-5 lg:gap-x-0">
+            <div class="flex flex-col lg:flex-col items-center lg:gap-y-6 gap-x-5 lg:gap-x-0">
               <svg xmlns="http://www.w3.org/2000/svg" aria-label="WhatsApp" role="img" viewBox="0 0 512 512"
                 width="64px" height="64px" fill="#000000">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -870,7 +882,7 @@ trabajamos continuamente para conseguir la
                   </path>
                 </g>
               </svg>
-              <p class=" text-[#2bb826] text-2xl font-bold"> Hablemos por WhatsApp</p>
+              <p class=" text-[#2bb826] text-2xl font-bold text-left lg:text-center"> Hablemos por WhatsApp</p>
             </div>
             <p class="text-center text-xl w-2/3 pb-5 lg:pb-0">Envianos un mensaje a nuestro
               WhatsApp oficial de soporte

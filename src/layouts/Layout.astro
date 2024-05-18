@@ -25,10 +25,36 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<slot id="cont"/>
 	</body>
 </html>
+<!-- <script> -->
+
+<!-- const body = document.body, -->
+<!--                 scrollWrap = document.getElementById("cont")!, -->
+<!--                 height = scrollWrap.getBoundingClientRect().height - 1, -->
+<!--                 speed = 0.04; -->
+
+<!--             var offset = 0; -->
+
+<!--             body.style.height = Math.floor(height) + "px"; -->
+
+<!--             function smoothScroll() { -->
+<!--                 offset += (window.pageYOffset - offset) * speed; -->
+
+<!--                 var scroll = "translateY(-" + offset + "px) translateZ(0)"; -->
+<!--                 scrollWrap.style.transform = scroll; -->
+
+<!--                 callScroll = requestAnimationFrame(smoothScroll); -->
+<!--             } -->
+
+<!--             smoothScroll(); -->
+<!-- </script> -->
 <style is:global>
+  html {
+/* scroll-behavior: smooth; */
+      /* scroll-behavior: cubic-bezier(0.42, 0, 0.58, 1); */
+  }
 /* code { */
 	/* 	font-family: */
 	/* 		Menlo, */
@@ -41,3 +67,4 @@ const { title } = Astro.props;
 	/* 		monospace; */
 	/* } */
 </style>
+
