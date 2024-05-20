@@ -80,13 +80,22 @@ const carrouser1 = [
 ]
 
 const carrouserHotel = [
-  '/landingsPACHA/H4_g7zyxv.png',
-  '/landingsPACHA/H5_g1xiky.png',
-  '/landingsPACHA/H6_tmpgui.png',
-  '/landingsPACHA/H3_awywpb.png',
+  '/landingsPACHA/1.jpg',
+  '/landingsPACHA/2.jpg',
+  '/landingsPACHA/3.jpg',
+  '/landingsPACHA/4.jpg',
+  '/landingsPACHA/5.jpg',
+  '/landingsPACHA/6.jpg',
+  '/landingsPACHA/7.jpg',
+  '/landingsPACHA/8.jpg',
+  '/landingsPACHA/9.jpg',
+  // '/landingsPACHA/H4_g7zyxv.png',
+  // '/landingsPACHA/H5_g1xiky.png',
+  // '/landingsPACHA/H6_tmpgui.png',
   // '/landingsPACHA/H3_awywpb.png',
-  '/landingsPACHA/H2_xfp2hv.png',
-  '/landingsPACHA/H1_st9adb.png',
+  // // '/landingsPACHA/H3_awywpb.png',
+  // '/landingsPACHA/H2_xfp2hv.png',
+  // '/landingsPACHA/H1_st9adb.png',
 ]
 // const optimizedImage = await Promise.all(images.map( async(ele) => await getImage({})))
  
@@ -184,7 +193,7 @@ const resultado = await getIpInfo()
 
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Pacha 8 dias">
 	<main class="flex flex-col">
     <div class="w-[100vw] general" style={`background-image: url(${FONDOENTERO.src}); background-repeat:repeat`}>
       <div class="w-full banner  flex flex-col justify-between pb-10 h-[250px] lg:h-[120vh]">
@@ -818,7 +827,7 @@ trabajamos continuamente para conseguir la
 
         <div class="mt-10 lg:mt-16">
           <div class="miniDiv">
-            <ImageGrid client:only  srcImages={getImages(autorizaciones,{"height":"600"})}  label={false}>
+            <ImageGrid client:only  srcImages={getImages(autorizaciones,{"height":"650"})}  label={false}>
             </ImageGrid> 
             <div id="galleryAutori" class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 px-10 lg:px-0">
 

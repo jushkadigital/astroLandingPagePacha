@@ -42,11 +42,11 @@ export function ImagePopUp ({poper,LayoutId,miniTabsSrc,lengthArr,label}:Props){
       <div>
       </div>
       <div className="flex flex-row justify-center">
-      <div className="w-10 flex justify-center z-50"><ArrowLeftCircleIcon onClick={()=>minus()} className="text-white cursor-pointer" /></div>
+      <div className="w-10 flex justify-center z-50"><ArrowLeftCircleIcon onClick={()=>minus()} className="text-white cursor-pointer select-none" /></div>
       <div className="w-fit mt-10">
         <motion.img layout src={label ? SingleImage.src :SingleImage} className=" m-auto rounded-2xl"/>
       </div>
-      <div className="w-10 flex justify-center z-50"><ArrowRightCircleIcon onClick={()=>add()} className="text-white cursor-pointer"/></div>
+      <div className="w-10 flex justify-center z-50"><ArrowRightCircleIcon onClick={()=>add()} className="text-white cursor-pointer select-none"/></div>
 
       </div>
             <div className="flex justify-evenly mt-10 w-2/3 mx-auto">

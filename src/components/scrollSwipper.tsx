@@ -37,7 +37,7 @@ const HorizontalScrollCarousel = ({cards}:Props) => {
   });
 
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"]);
-  const background = useTransform(scrollYProgress, [0,0.3], ["#C0C0C0", "#161616"]);
+  const background = useTransform(scrollYProgress, [0,0.3], ["#C0C0C0", "#000000"]);
 
   return (
     <motion.section ref={targetRef}   className="relative h-[300vh] ">
