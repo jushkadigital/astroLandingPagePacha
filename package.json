@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.5.10",
     "@astrojs/mdx": "^3.0.0",
     "@astrojs/netlify": "^5.2.1",
+    "@astrojs/partytown": "^2.1.0",
     "@astrojs/react": "^3.3.0",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource/nunito": "^5.0.18",
