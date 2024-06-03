@@ -8,7 +8,11 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), mdx(), partytown()],
+  integrations: [tailwind(), react(), mdx(), partytown({
+  config: {
+			  forward: ["dataLayer.push","fbq"],
+			},
+  })],
   image: {
     domains: ["ik.imagekit.io", 'res.cloudinary.com']
   },
