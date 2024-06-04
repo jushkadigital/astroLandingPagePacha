@@ -9,25 +9,27 @@ import {
   Textarea
 } from "@material-tailwind/react";
 import { Spinner } from "@material-tailwind/react";
-
+// @ts-ignore
+import { useCountries } from "use-react-countries";
 
 
 type Props = {
-  objRes: any
+  // objRes: any
 }
 
-export const Formu = ({ objRes }: Props) => {
+export const Formu = () => {
   const [responseMessage, setResponseMessage] = useState("");
-
   const [isLoading, setLoading] = useState(false)
-
   const [temp, setTemp] = useState("");
+  const [country, setCountry] = useState("");
   async function submit(e: any) {
     e.preventDefault();
     setLoading(true)
+    const finalCountry = country.split('+')
+    console.log(finalCountry)
     const formData = new FormData(e.target as HTMLFormElement);
-    formData.append("phoneCode", objRes.phoneCode)
-    formData.append("country", objRes.country)
+    formData.append("phoneCode", "+" + finalCountry[1]!!)
+    formData.append("country", finalCountry[0]!!.trim())
     formData.append("month",temp)
     const response = await fetch("/api/form", {
       method: "POST",
@@ -40,10 +42,17 @@ export const Formu = ({ objRes }: Props) => {
       setResponseMessage(data.message);
     }
   }
+  
+  const handleChangeCountry = (e)=>{
+    setCountry(e)
+    console.log(e)
+  }
 
   const handleChange = (e) => {
     setTemp(e);
   }
+const { countries } = useCountries();
+
   return (
     <div className="flex flex-col w-full">
       <h2 className="text-[#B65F00]  text-[15px] lg:text-2xl font-extrabold text-center lg:text-left  ">
@@ -169,6 +178,32 @@ export const Formu = ({ objRes }: Props) => {
             />
           </div>
         </div>
+<div className="w-72">
+      <Select
+        size="lg"
+        label="Selecciona tu pais"
+        onChange={handleChangeCountry}
+        selected={(element) =>
+          element &&
+          React.cloneElement(element, {
+            disabled: true,
+            className:
+              "flex items-center opacity-100 px-0 gap-2 pointer-events-none",
+          })
+        }
+      >
+        {countries.filter(({name})=>['Peru','Mexico','Panama','Guatemala','Honduras','Costa Rica','Nicaragua','Colombia','Chile','Uruguay','Spain','United States','Dominican Republic'].includes(name)).map(({ name, flags,countryCallingCode }) => (
+          <Option key={name} value={name+countryCallingCode} className="flex items-center gap-2">
+            <img
+              src={flags.svg}
+              alt={name}
+              className="h-5 w-5 rounded-full object-cover"
+            />
+            {name} {countryCallingCode}
+          </Option>
+        ))}
+      </Select>
+    </div>
 
         <div>
           <Typography

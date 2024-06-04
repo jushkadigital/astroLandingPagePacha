@@ -174,22 +174,22 @@ const pacha = await Astro.glob('../pages/videos/*.md')
 const princiDesc = await Astro.glob('../pages/descripcionInicial/*.md')
 
 
-async function getIpInfo (){
-  // Set endpoint and your access key
-  const accessKey = '5318afd3-4699-410c-ae08-9e18658c814a';
-  const url = 'https://apiip.net/api/check?ip='+ ip +'&accessKey='+ accessKey; 
+// async function getIpInfo (){
+//   // Set endpoint and your access key
+//   const accessKey = '5318afd3-4699-410c-ae08-9e18658c814a';
+//   const url = 'https://apiip.net/api/check?ip='+ ip +'&accessKey='+ accessKey; 
 
-  // Make a request and store the response
-  const response = await fetch(url);
+//   // Make a request and store the response
+//   const response = await fetch(url);
 
-  // Decode JSON response:
-  const result = await response.json();
+//   // Decode JSON response:
+//   const result = await response.json();
 
-  // Output the "code" value inside "currency" object
-  return result
-};
+//   // Output the "code" value inside "currency" object
+//   return result
+// };
 
-const resultado = await getIpInfo()
+// const resultado = await getIpInfo()
 
 ---
 
@@ -865,7 +865,7 @@ trabajamos continuamente para conseguir la
           </div>
           <div class="flex lg:flex-row flex-col lg:mt-10 gap-y-16 lg:gap-y-0">
             <div class="w-full lg:w-1/2 px-3 flex justify-center">
-              <Formu client:only objRes={{phoneCode:resultado.phoneCode,country:resultado.countryName}}/>
+              <Formu client:only />
           
           <!-- <script > -->
           <!--     (function (w, d, u) {var s = d.createElement('script'); s.async = true; s.src = u + '?' + (Date.now() / 180000 | 0); var h = d.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h);})(window, document, 'https://cdn.bitrix24.es/b15344011/crm/form/loader_127.js');</script> -->
