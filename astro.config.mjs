@@ -10,6 +10,6 @@ export default defineConfig({
   image: {
     domains: ["ik.imagekit.io", 'res.cloudinary.com']
   },
-  output: "server",
+  output: "static",
   adapter: netlify()
 });
