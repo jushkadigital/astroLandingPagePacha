@@ -150,6 +150,7 @@ const { countries } = useCountries();
               containerProps={{ className: "min-w-[72px]" }}
               placeholder="Nombres"
               id="nombres"
+              required
               name="nombres"
               className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
               labelProps={{
@@ -170,6 +171,7 @@ const { countries } = useCountries();
               containerProps={{ className: "min-w-[72px]" }}
               id="apellidos"
               name="apellidos"
+              required
               placeholder="apellidos"
               className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
               labelProps={{
@@ -183,6 +185,7 @@ const { countries } = useCountries();
         size="lg"
         label="Selecciona tu pais"
         onChange={handleChangeCountry}
+        
         selected={(element) =>
           element &&
           React.cloneElement(element, {
@@ -217,6 +220,7 @@ const { countries } = useCountries();
             placeholder="Telefono"
             id="telefono"
             name="telefono"
+            required
             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
             labelProps={{
               className: "before:content-none after:content-none",
@@ -237,6 +241,7 @@ const { countries } = useCountries();
             id="correo"
             name="correo"
             placeholder="Correo"
+            required
             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
             labelProps={{
               className: "before:content-none after:content-none",
