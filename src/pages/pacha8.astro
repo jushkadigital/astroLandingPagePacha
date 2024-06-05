@@ -209,6 +209,16 @@ const princiDesc = await Astro.glob('../pages/descripcionInicial/*.md')
     </div>
       
     <div class="lg:px-[300px] mt-[15px] flex flex-col ">
+        <div class="w-full mb-10">
+          <YouTube id={pacha[0]!.frontmatter.video1} posterQuality="high" class="mx-auto" params="autoplay=1&control=0"/>
+
+          <!-- <iframe -->
+          <!--   width="640" height="360" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" -->
+          <!--   style="height: auto; width: 100%; aspect-ratio: 640 / 360;" allowfullscreen frameborder="0" -->
+          <!--   class="lazy-iframe" data-src="https://www.youtube.com/embed/96SNMK1ylFs?si=gpN7QVohw6i3RoZ9" -->
+          <!--   ></iframe> -->
+        </div>
+
     <div class="mt-[40px] mb-[48px] lg:my-16">
           <h2 class=" text-[#B65F00]  text-[20px] lg:text-3xl font-extrabold text-center ">NUESTROS RECONOCIMIENTOS</h2>
         </div>
@@ -299,16 +309,7 @@ const princiDesc = await Astro.glob('../pages/descripcionInicial/*.md')
 
 
       
-        <div class="w-full mb-10">
-          <YouTube id={pacha[0]!.frontmatter.video1} posterQuality="high" class="mx-auto"/>
-
-          <!-- <iframe -->
-          <!--   width="640" height="360" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" -->
-          <!--   style="height: auto; width: 100%; aspect-ratio: 640 / 360;" allowfullscreen frameborder="0" -->
-          <!--   class="lazy-iframe" data-src="https://www.youtube.com/embed/96SNMK1ylFs?si=gpN7QVohw6i3RoZ9" -->
-          <!--   ></iframe> -->
-        </div>
-
+        
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-y-10 justify-items-center lg:mx-10">
           <div class="flex flex-col w-2/3 justify-center items-center">
             <Image  alt="icc" class="imgIconViaje" inferSize src={ICONOSEGURIDAD} widths={[100,300]} sizes={`(max-width: 720px) 50vw, 100vw`}/>
