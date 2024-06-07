@@ -111,6 +111,12 @@ const voyager = [
   '/landingsPacha/tren05.jpg',
   '/landingsPacha/tren06.jpg',
 ]
+const beneficios = [
+  '/landingsPacha/Group%2025.png',
+  '/landingsPacha/Group%2026.png',
+  '/landingsPacha/Group%2027.png',
+  '/landingsPacha/Group%2028.png',
+]
 
 
 function getImages(arrImgs:string[],sizes:any){
@@ -316,6 +322,8 @@ const princiDesc = await Astro.glob('../pages/descripcionInicial/*.md')
         </div>
       </div>
 
+          <ImageGrid client:only srcImages={getImages(beneficios,{"aspectRatio":"1-1"})} label={false}>
+              </ImageGrid> 
 
           <div class="flex relative flex-col justify-center w-full h-full mb-4  mt-5  font-bold incluye text-white">
             <!-- <Image  alt="fondo" class="w-[100%] h-[100%] object-cover" inferSize src={getImages(['/landingsPACHA/FONDO.png'],{"width":"1400"})[0]!!} widths={[350,500,720,1400]}/> -->
