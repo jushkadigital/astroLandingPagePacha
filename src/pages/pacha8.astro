@@ -82,7 +82,6 @@ const carrouserHotel = [
 // const optimizedImage = await Promise.all(images.map( async(ele) => await getImage({})))
  
 
-
 const imagekit = new ImageKit({
   publicKey:"public_8y1a8n6716tvqlgvcOZdqldJ+ZA="
 ,
@@ -190,6 +189,13 @@ const staticItinerarioMobile = await Promise.all(posts.map(async ({frontmatter})
 return(
   {src:prevStatic[0]!!.src,title:frontmatter.title,desc:frontmatter.desc})}
 ))
+
+const bannerDeskFooter =await getStaticImg(['https://res.cloudinary.com/denkdx0za/image/upload/v1712002246/MONT_Mesa_de_trabajo_1_mv1ssn_c_fill_ar_16_9_bpqjek.png'])
+const bannerDeskFooterR = `url('${bannerDeskFooter[0]!!.src}')`
+console.log(bannerDeskFooterR)
+
+const bannerMobileFooter = await getStaticImg(['https://res.cloudinary.com/denkdx0za/image/upload/v1712006725/Rectangle_20_b8kqox.png'])
+const bannerMobileFooterR = `url('${bannerMobileFooter[0]!!.src}')`
 ---
 
 <Layout title="Pacha 8 dias">
@@ -904,14 +910,33 @@ return(
     </div>
         </footer>
     </div>
+      <script is:inline id="server-data" type="application/json">
+      
+</script>
+
   </main>
 </Layout>
+ 
+<script define:vars={{}}>
+  
+  // document.addEventListener('DOMContentLoaded', () => {
+  //   const footer = document.querySelector(".foot")
+  //   const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+  //   if (isMobile) {
+  //   const serverData = JSON.parse(document.getElementById('server-data')!!.textContent!!);
+  //     console.log(serverData)
+  //   } else {
 
-<style>
+  //   }
+  // })
+
+</script>
+<style define:vars={{bannerDeskFooterR,bannerMobileFooterR}}>
 	main {
 		/* margin: auto; */
 		/* padding: 1rem; */
 	}
+
   .miniDiv {
     /* width: 100vw; */
     /* display: flex; */
@@ -944,10 +969,12 @@ position: absolute;
     width: 150px;
     /* height: 400px; */
   }
+
 .hotelCarac img{
   width:40.5px;
   height:40.5px;
 }
+
 .hotelCarac div {
   /* width: 50px; */
   display: flex;
@@ -956,6 +983,7 @@ position: absolute;
   align-content: center;
   align-items:center;
 }
+
 .hotelCarac p {
   font-size:12px;
   width:50%;
@@ -983,7 +1011,7 @@ position: absolute;
 
 
 .foot {
-    background-image:url('https://res.cloudinary.com/denkdx0za/image/upload/v1712006725/Rectangle_20_b8kqox.png');
+    background-imag: var(--bannerMobileFooterR);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1057,7 +1085,7 @@ position: absolute;
   text-align:center;
 }
   .foot {
-    background-image:url('https://res.cloudinary.com/denkdx0za/image/upload/v1712002246/MONT_Mesa_de_trabajo_1_mv1ssn_c_fill_ar_16_9_bpqjek.png');
+    background-image:var(--bannerMobileFooterR);
     background-size: cover;
       background-position: center;
     background-repeat: no-repeat;
