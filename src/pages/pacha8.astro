@@ -173,29 +173,32 @@ const princiDesc = await Astro.glob('../pages/descripcionInicial/*.md')
 // const resultado = await getIpInfo()
 
 
-const staticItinerarioDesk = await Promise.all(posts.map(async ({frontmatter})=>{
-  
-  const prevStatic = await getStaticImg([frontmatter.srcDesk])
-  console.log(prevStatic[0]!!.src)
+// const staticItinerarioDesk = await Promise.all(posts.map(async ({frontmatter})=>{
 
-return(
-  {src:prevStatic[0]!!.src,title:frontmatter.title,desc:frontmatter.desc})}
-))
+//   const prevStatic = await getStaticImg([frontmatter.srcDesk])
+//   console.log(prevStatic[0]!!.src)
 
-const staticItinerarioMobile = await Promise.all(posts.map(async ({frontmatter})=>{
-  
-  const prevStatic = await getStaticImg([frontmatter.src])
+//   return(
+//     {src:prevStatic[0]!!.src,title:frontmatter.title,desc:frontmatter.desc})}
+// ))
 
-return(
-  {src:prevStatic[0]!!.src,title:frontmatter.title,desc:frontmatter.desc})}
-))
+// const staticItinerarioMobile = await Promise.all(posts.map(async ({frontmatter})=>{
+//   
+//   const prevStatic = await getStaticImg([frontmatter.src])
 
-const bannerDeskFooter =await getStaticImg(['https://res.cloudinary.com/denkdx0za/image/upload/v1712002246/MONT_Mesa_de_trabajo_1_mv1ssn_c_fill_ar_16_9_bpqjek.png'])
-const bannerDeskFooterR = `url('${bannerDeskFooter[0]!!.src}')`
+// return(
+//   {src:prevStatic[0]!!.src,title:frontmatter.title,desc:frontmatter.desc})}
+// ))
+
+// const bannerDeskFooter =await getStaticImg(['https://res.cloudinary.com/denkdx0za/image/upload/v1712002246/MONT_Mesa_de_trabajo_1_mv1ssn_c_fill_ar_16_9_bpqjek.png'])
+// const bannerDeskFooterR = `url('${bannerDeskFooter[0]!!.src}')`
+const bannerDeskFooterR = ``
 console.log(bannerDeskFooterR)
 
-const bannerMobileFooter = await getStaticImg(['https://res.cloudinary.com/denkdx0za/image/upload/v1712006725/Rectangle_20_b8kqox.png'])
-const bannerMobileFooterR = `url('${bannerMobileFooter[0]!!.src}')`
+// const bannerMobileFooter = await getStaticImg(['https://res.cloudinary.com/denkdx0za/image/upload/v1712006725/Rectangle_20_b8kqox.png'])
+// const bannerMobileFooterR = `url('${bannerMobileFooter[0]!!.src}')`
+const bannerMobileFooterR = ``
+
 ---
 
 <Layout title="Pacha 8 dias">
@@ -343,7 +346,7 @@ const bannerMobileFooterR = `url('${bannerMobileFooter[0]!!.src}')`
 
       
         <div id="itinerario" >
-          <Itinerario client:only srcImagesDesk={staticItinerarioDesk}  srcImagesMobile={staticItinerarioMobile}/>
+          <!-- <Itinerario client:only srcImagesDesk={staticItinerarioDesk}  srcImagesMobile={staticItinerarioMobile}/> -->
         </div>
         <!-- <div id="mobileItinerario" class="flex flex-col gap-y-10 mb-16"> </div> -->
 <div class="flex flex-col lg:gap-y-2 my-16">

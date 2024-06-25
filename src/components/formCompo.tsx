@@ -31,11 +31,12 @@ export const Formu = () => {
     formData.append("phoneCode", "+" + finalCountry[1]!!)
     formData.append("country", finalCountry[0]!!.trim())
     formData.append("month",temp)
-    const response = await fetch("/api/form", {
+    const response = await fetch("/netlify/functions/bitrix.mts", {
       method: "POST",
       body: formData,
     });
     const data = await response.json();
+    console.log(data)
     window.location.href = 'https://pdsviajes.com/gracias-formulario/'
     setLoading(prev => false)
     if (data.message) {
