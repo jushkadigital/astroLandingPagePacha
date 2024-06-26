@@ -34,6 +34,10 @@ export const Formu = () => {
     const response = await fetch("/.netlify/functions/bitrix", {
       method: "POST",
       body: formData,
+      headers: {
+        'Access-Control -Allow-Origin': '*', 
+        'Access-Control-Allow-Credentials': true 
+      }
     });
 
     console.log(response)
