@@ -31,10 +31,12 @@ export const Formu = () => {
     formData.append("phoneCode", "+" + finalCountry[1]!!)
     formData.append("country", finalCountry[0]!!.trim())
     formData.append("month",temp)
-    const response = await fetch("/netlify/functions/bitrix.mts", {
+    const response = await fetch("/.netlify/functions/bitrix", {
       method: "POST",
       body: formData,
     });
+
+    console.log(response)
     const data = await response.json();
     console.log(data)
     window.location.href = 'https://pdsviajes.com/gracias-formulario/'
@@ -267,7 +269,7 @@ const { countries } = useCountries();
         </div>
               <Button type="submit" disabled={responseMessage == "Success"} className="mt-6 text-white bg-[#B65F00] lg:text-xl text-sm" >
             
-            {isLoading ? <Spinner /> : responseMessage == "Success" ? "Enviado!!" : "Enviar"}
+            {isLoading ? <Spinner className="mx-auto"/> : responseMessage == "Success" ? "Enviado!!" : "Enviar"}
           </Button>
 
 
