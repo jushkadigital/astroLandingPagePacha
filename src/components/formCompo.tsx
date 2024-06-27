@@ -28,6 +28,8 @@ export const Formu = () => {
     const finalCountry = country.split('+')
     console.log(finalCountry)
     const formData:any = {}
+    const formi = new FormData(e.target as HTMLFormElement)
+    formi.forEach((key,value)=> formData[key.toString()] = value)
     formData["phoneCode"] = "+" + finalCountry[1]!!
     formData["country"] = finalCountry[0]!!.trim()
     formData["month"] = temp
