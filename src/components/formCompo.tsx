@@ -41,7 +41,7 @@ export const Formu = () => {
     console.log(response)
     const data = await response.json();
     console.log(data)
-    // window.location.href = 'https://pdsviajes.com/gracias-formulario/'
+    window.location.href = 'https://pdsviajes.com/gracias-formulario/'
     setLoading(prev => false)
     if (data.message) {
       setResponseMessage(data.message);
