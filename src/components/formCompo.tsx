@@ -27,16 +27,13 @@ export const Formu = () => {
     setLoading(true)
     const finalCountry = country.split('+')
     console.log(finalCountry)
-    const formData = new FormData(e.target as HTMLFormElement);
-    formData.append("phoneCode", "+" + finalCountry[1]!!)
-    formData.append("country", finalCountry[0]!!.trim())
-    formData.append("month",temp)
+    const formData:any = {}
+    formData["phoneCode"] = "+" + finalCountry[1]!!
+    formData["country"] = finalCountry[0]!!.trim()
+    formData["month"] = temp
     const response = await fetch("/.netlify/functions/bitrix", {
       method: "POST",
       body: formData,
-      headers: {
-        'Access-Control-Allow-Origin': '*', 
-      }
     });
 
     console.log(response)
