@@ -33,7 +33,7 @@ export const Formu = () => {
     formData["month"] = temp
     const response = await fetch("/.netlify/functions/bitrix", {
       method: "POST",
-      body: formData,
+      body: JSON.stringify(formData),
     });
 
     console.log(response)
