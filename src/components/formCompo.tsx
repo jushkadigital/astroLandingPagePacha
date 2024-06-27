@@ -53,7 +53,7 @@ export const Formu = () => {
     console.log(e)
   }
 
-  const handleChange = (e) => {
+  const handleChangeMonth = (e) => {
     setTemp(e);
   }
 const { countries } = useCountries();
@@ -254,19 +254,19 @@ const { countries } = useCountries();
           />
         </div>
         <div>
-          <Select label="Selecione el MES en que desea viajar?" onChange={handleChange}>
-            <Option>Enero</Option>
-            <Option>Febrero</Option>
-            <Option>Marzo</Option>
-            <Option>Abril</Option>
-            <Option>Mayo</Option>
-            <Option>Junio</Option>
-            <Option>Julio</Option>
-            <Option>Agosto</Option>
-            <Option>Septiembre</Option>
-            <Option>Octubre</Option>
-            <Option>Noviembre</Option>
-            <Option>Diciembre</Option>
+          <Select label="Selecione el MES en que desea viajar?" onChange={handleChangeMonth}>
+            <Option value="Enero">Enero</Option>
+            <Option value="Febrero">Febrero</Option>
+            <Option value="Marzo">Marzo</Option>
+            <Option value="Abril">Abril</Option>
+            <Option value="Mayo">Mayo</Option>
+            <Option value="Junio">Junio</Option>
+            <Option value="Julio">Julio</Option>
+            <Option value="Agosto">Agosto</Option>
+            <Option value="Septiembre">Septiembre</Option>
+            <Option value="Octubre">Octubre</Option>
+            <Option value="Noviembre">Noviembre</Option>
+            <Option value="Diciembre">Diciembre</Option>
           </Select>
         </div>
               <Button type="submit" disabled={responseMessage == "Success"} className="mt-6 text-white bg-[#B65F00] lg:text-xl text-sm" >
