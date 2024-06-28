@@ -190,12 +190,12 @@ return(
   {src:prevStatic[0]!!.src,title:frontmatter.title,desc:frontmatter.desc})}
 ))
 
-const bannerDeskFooter =await getStaticImg(['https://res.cloudinary.com/denkdx0za/image/upload/v1712002246/MONT_Mesa_de_trabajo_1_mv1ssn_c_fill_ar_16_9_bpqjek.png'])
+const bannerDeskFooter =await getStaticImg(['https://res.cloudinary.com/dhwwdtclq/image/upload/v1719593877/MONT_Mesa_de_trabajo_1_eac8sh.png'])
+
 const bannerDeskFooterR = `url('${bannerDeskFooter[0]!!.src}')`
-// const bannerDeskFooterR = ``
 console.log(bannerDeskFooterR)
 
-const bannerMobileFooter = await getStaticImg(['https://res.cloudinary.com/denkdx0za/image/upload/v1712006725/Rectangle_20_b8kqox.png'])
+const bannerMobileFooter = await getStaticImg(['https://res.cloudinary.com/dhwwdtclq/image/upload/v1719594021/Rectangle_20_xu16ju.png'])
 const bannerMobileFooterR = `url('${bannerMobileFooter[0]!!.src}')`
 // const bannerMobileFooterR = ``
 
@@ -373,7 +373,7 @@ const bannerMobileFooterR = `url('${bannerMobileFooter[0]!!.src}')`
 
           </div>
          
-          <div class="flex relative flex-col justify-center w-full h-full mb-4  mt-5  font-bold incluye text-white">
+          <div class="flex relative flex-col justify-center w-full h-full lg:h-3/4 mb-4  mt-5  font-bold incluye text-white">
             <!-- <Image  alt="fondo" class="w-[100%] h-[100%] object-cover" inferSize src={getImages(['/landingsPACHA/FONDO.png'],{"width":"1400"})[0]!!} widths={[350,500,720,1400]}/> -->
             <Image alt="incluye" class="w-full h-full  object-cover" inferSize src={getImages(['/landingsPacha/Group%2020.png'],{"aspectRatio":"1-1","width":"400"})[0]!!} widths={[100,400,800]}/>
             <div class="absolute  w-full p-4 lg:p-10 px-6 lg:px-12 ">
