@@ -27,7 +27,7 @@ exports.handler = async (event,context) => {
   params['FIELDS[PHONE][0][VALUE]'] = `+`+data.phoneCode +' '+data.telefono
   params['FIELDS[PHONE][0][VALUE_TYPE]'] = 'Work'
 
-  const res = await axios.post('https://pdscorporation.bitrix24.es/rest/108335/vfbji7p1qmfx0m7d/crm.lead.add.json',qs.stringify(params) , { headers:{
+  const res = await axios.post(`${import.meta.env.PUBLIC_BITRIX}crm.lead.add.json`,qs.stringify(params) , { headers:{
       'Content-Type': 'application/x-www-form-urlencoded'
     } })
   
