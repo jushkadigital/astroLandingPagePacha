@@ -6,7 +6,7 @@ exports.handler = async (event,context) => {
 // const fields = await parseMultipartForm(event)
   // console.log(fields)
   
-  console.log(`${import.meta.env.PUBLIC_BITRIX}crm.lead.add.json`)
+  console.log(`${process.env.BITRIX}crm.lead.add.json`)
   const data = JSON.parse(event.body)
 
 
@@ -28,7 +28,7 @@ exports.handler = async (event,context) => {
   params['FIELDS[PHONE][0][VALUE]'] = `+`+data.phoneCode +' '+data.telefono
   params['FIELDS[PHONE][0][VALUE_TYPE]'] = 'Work'
 
-  const res = await axios.post(`${import.meta.env.PUBLIC_BITRIX}crm.lead.add.json`,qs.stringify(params) , { headers:{
+  const res = await axios.post(`${process.env.BITRIX}crm.lead.add.json`,qs.stringify(params) , { headers:{
       'Content-Type': 'application/x-www-form-urlencoded'
     } })
   
