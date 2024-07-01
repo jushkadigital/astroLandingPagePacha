@@ -1,5 +1,6 @@
-import axios from "axios"
-import qs from "qs"
+const axios = require("axios")
+const qs = require('qs')
+
 exports.handler = async (event,context) => {
  console.log("aoeaoe") 
 // const fields = await parseMultipartForm(event)
