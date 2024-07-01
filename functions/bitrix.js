@@ -6,6 +6,7 @@ exports.handler = async (event,context) => {
 // const fields = await parseMultipartForm(event)
   // console.log(fields)
   
+  console.log(`${import.meta.env.PUBLIC_BITRIX}crm.lead.add.json`)
   const data = JSON.parse(event.body)
 
 
