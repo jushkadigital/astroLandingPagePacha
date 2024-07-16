@@ -920,18 +920,11 @@ const bannerMobileFooterR = `url('${bannerMobileFooter[0]!!.src}')`
   </main>
 </Layout>
  
-<script define:vars={{}}>
-  
-  // document.addEventListener('DOMContentLoaded', () => {
-  //   const footer = document.querySelector(".foot")
-  //   const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-  //   if (isMobile) {
-  //   const serverData = JSON.parse(document.getElementById('server-data')!!.textContent!!);
-  //     console.log(serverData)
-  //   } else {
+<script is:inline >
+  document.getElementById('botonJuanca').addEventListener('click', function() {
+    fbq('track', 'Contact' );
+  });
 
-  //   }
-  // })
 
 </script>
 <style define:vars={{bannerDeskFooterR,bannerMobileFooterR}}>
