@@ -31,6 +31,8 @@ exports.handler = async (event,context) => {
   // }mtnwmwvsmwvzw
 
 
+  
+  try{
   const response = await fetch('https://graph.facebook.com/v20.0/1430985167621653/events', {
     method: 'POST',
     headers: {
@@ -42,13 +44,12 @@ exports.handler = async (event,context) => {
     }),
   });
 
-  try{
-
+    console.log(response)
   const result = await response.json();
 
     return {
     statusCode:200,
-    body: JSON.stringify({message: `gaa`})
+    body: JSON.stringify({message: result})
   }
 
   }
