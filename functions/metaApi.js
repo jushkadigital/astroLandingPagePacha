@@ -5,7 +5,7 @@ exports.handler = async (event,context) => {
 
   const eventData = JSON.parse(event.body)
   
-  const accessToken = 'EAAj4x7ZAOGoQBOZBqRDEXuYzah5ZCq6DbxbJZAMHul4i5FA4fm2hDCaalLz3EZB6WOZBdQGes7c6sAZAlp9O0KDgnxTrwDoK7ETahZAqa7gnHPzwYqF4IFk8ZASqoC82TjKk6wk6zNOv7kdR39ZCHhkJhue7WFwbDFcZATpMQfKfriZBDLcDFmsgZCIPkJFhZAY8gSp1l2iQZDZD';
+  const accessToken = 'EAA1IQyS0aOABOw7TTASv5vzdFiwv1PZCC5u9M0815rAF1AEosaEovY5XGOiDZBra4pUnAwmGoQ3GxdVBB3p287Xje6dv9pgwQf7Btsz0PYcLXpjk2BPib48aTmMixGn3HMlSfV2jG7fx7Ywsbsnk8ZCAZBkg933s8TCG1ixMPkP7ZABUMM6oa72b6rZCsQuB3t';
   let current_timestamp = Math.floor(new Date() / 1000);
   
   const myIP = event.headers['x-nf-client-connection-ip'] 
@@ -35,14 +35,13 @@ exports.handler = async (event,context) => {
   console.log(obj)
   
   try{
-  const response = await fetch('https://graph.facebook.com/v20.0/1430985167621653/events', {
+  const response = await fetch('https://graph.facebook.com/v20.0/1430985167621653/events?access_token='+accessToken, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       data: [obj],
-      access_token: accessToken,
     }),
   });
 
