@@ -9,7 +9,8 @@ exports.handler = async (event,context) => {
   // const accessToken = process.env.META_ACCESS_TOKEN;
   
   console.log("GAA")
-  console.log(event.headers['client-ip'])
+  console.log(event.headers['x-nf-client-connection-ip'])
+  console.log(event.headers)
   
   return {
     statusCode:200,
