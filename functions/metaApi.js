@@ -5,13 +5,12 @@ exports.handler = async (event,context) => {
 
   const eventData = JSON.parse(event.body)
   
-  const accessToken = 'EAA1IQyS0aOABOw7TTASv5vzdFiwv1PZCC5u9M0815rAF1AEosaEovY5XGOiDZBra4pUnAwmGoQ3GxdVBB3p287Xje6dv9pgwQf7Btsz0PYcLXpjk2BPib48aTmMixGn3HMlSfV2jG7fx7Ywsbsnk8ZCAZBkg933s8TCG1ixMPkP7ZABUMM6oa72b6rZCsQuB3t';
+  const accessToken = 'EAAj4x7ZAOGoQBO0LW0B1Xc4DqeGZCLZCONTZAT0Xs4bL4HD2L5ZCsSQntfxgLtxsHZBZCkcXXL32KT5EH0kXvDbuahBz4ZBuuyr2gwulGghVaqDuWr3APulmiriCxCXc0Tb8ZBLZCEAe0oacXj0NRxH0ZCvUxYpryQoUe2187aNRzeKdTZCs7bBzzQH4LHmBMZAsZC3EzLWAZDZD';
   let current_timestamp = Math.floor(new Date() / 1000);
   
   const myIP = event.headers['x-nf-client-connection-ip'] 
   
   let obj = null
-  console.log(eventData.type)
   switch(eventData.type){
     case "whatsapp":
         obj =  {
@@ -32,7 +31,6 @@ exports.handler = async (event,context) => {
   // }mtnwmwvsmwvzw
 
 
-  console.log(obj)
   
   try{
   const response = await fetch('https://graph.facebook.com/v20.0/1430985167621653/events?access_token='+accessToken, {
@@ -45,6 +43,7 @@ exports.handler = async (event,context) => {
     }),
   });
 
+    console.log(response)
   const result = await response.json();
 
     return {
