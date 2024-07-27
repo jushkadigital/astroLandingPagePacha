@@ -43,9 +43,10 @@ exports.handler = async (event,context) => {
     }),
   });
 
-    console.log(response)
+    // console.log(response)
   const result = await response.json();
 
+    console.log(result)
     return {
     statusCode:200,
     body: JSON.stringify({message: result})
