@@ -37,8 +37,14 @@ export const Formu = () => {
       method: "POST",
       body: JSON.stringify(formData),
     });
+    const response2 = await fetch("/.netlify/functions/metaApi", {
+      method: "POST",
+      body: JSON.stringify({'type':"formulario"}),
+    })
 
     console.log(response)
+    console.log(response2)
+    
     const data = await response.json();
     console.log(data)
     window.location.href = 'https://pdsviajes.com/gracias-formulario/'

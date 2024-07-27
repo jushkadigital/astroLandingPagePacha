@@ -23,6 +23,17 @@ exports.handler = async (event,context) => {
          "opt_out": false
       }
     break;
+    case "formulario":
+      obj =  {
+         "event_name": "Lead",
+         "event_time": current_timestamp,
+         "user_data": {
+            "client_ip_address": myIP,
+            "client_user_agent": event.headers['user-agent']
+         },
+         "opt_out": false
+      }
+    break;
   }
 
   // return {
